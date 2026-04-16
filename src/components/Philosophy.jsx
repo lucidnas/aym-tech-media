@@ -61,7 +61,7 @@ export default function Philosophy() {
           {beliefs.map((belief, i) => (
             <motion.div
               key={belief.number}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.12 }}
               className="group relative py-10 border-b border-white/[0.06] first:border-t"
