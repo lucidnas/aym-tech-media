@@ -16,7 +16,7 @@ export default function CTA() {
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-3xl" />
       </div>
 
-      <div ref={ref} className="max-w-4xl mx-auto px-6 text-center relative">
+      <div ref={ref} className="max-w-3xl mx-auto px-6 text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
