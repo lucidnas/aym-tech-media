@@ -1,113 +1,209 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-function GradientOrb({ className, delay = 0 }) {
+const tickerItems = [
+  'Now shipping — AI video analysis',
+  'Autonomous micro-SaaS factory · v0.4',
+  'Sports media property in production',
+  'React Native app · TestFlight',
+  'Content pipeline · 80% ↓ manual ops',
+  'Generative thumbnail engine',
+  'Creator analytics OS',
+  'Dispatch №17 — the studio notebook',
+]
+
+function SignalBars() {
+  const [levels, setLevels] = useState([0.4, 0.7, 0.55, 0.85, 0.62, 0.9, 0.45, 0.78, 0.6])
+  useEffect(() => {
+    const id = setInterval(() => {
+      setLevels((prev) => prev.map(() => 0.25 + Math.random() * 0.75))
+    }, 420)
+    return () => clearInterval(id)
+  }, [])
   return (
-    <motion.div
-      className={`absolute rounded-full blur-[120px] ${className}`}
-      animate={{
-        x: [0, 30, -20, 0],
-        y: [0, -40, 20, 0],
-        scale: [1, 1.1, 0.95, 1],
-      }}
-      transition={{
-        duration: 12,
-        repeat: Infinity,
-        delay,
-        ease: 'easeInOut',
-      }}
-    />
+    <div className="flex items-end gap-[3px] h-10">
+      {levels.map((l, i) => (
+        <span
+          key={i}
+          className="w-[4px] bg-[color:var(--color-amber)]"
+          style={{ height: `${l * 100}%`, transition: 'height 0.32s cubic-bezier(0.4,0,0.2,1)' }}
+        />
+      ))}
+    </div>
   )
 }
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated background - contained within section */}
-      <div className="absolute inset-0 overflow-hidden">
-        <GradientOrb className="w-[500px] h-[500px] bg-indigo-600/20 -top-32 -left-32" delay={0} />
-        <GradientOrb className="w-[400px] h-[400px] bg-purple-700/20 top-1/3 -right-20" delay={2} />
-        <GradientOrb className="w-[350px] h-[350px] bg-blue-600/15 bottom-0 left-1/3" delay={4} />
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }} />
+    <section className="relative pt-[104px] pb-0 overflow-hidden">
+      {/* Left edge ruler */}
+      <div className="hidden md:flex flex-col justify-between absolute left-0 top-[120px] bottom-10 w-10 border-r border-[color:var(--color-rule)] font-mono text-[9px] uppercase tracking-[0.22em] text-[color:var(--color-mist)] py-6 px-2">
+        <span>↑ 2022</span>
+        <span className="rotate-90 origin-left translate-y-2">AYM · STUDIO</span>
+        <span>↓ now</span>
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
+      <div className="relative mx-auto max-w-[1280px] px-6 md:px-10 lg:px-14 pt-10 pb-16">
+        {/* Slate */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="section-slate mb-10"
         >
-          <Sparkles className="w-4 h-4 text-indigo-400" />
-          <span className="text-sm text-gray-300 font-medium">
-            Media company energy. Engineering company depth.
-          </span>
+          <span>§00 — Prologue</span>
+          <span className="rule-ticks" />
+          <span>A Transmission from the Studio</span>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] tracking-tight mb-8"
-        >
-          We Build Content Brands,{' '}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
-            AI-Powered Products
-          </span>
-          , and the Systems That Connect Them.
-        </motion.h1>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Headline column */}
+          <div className="lg:col-span-8">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-[clamp(54px,9.5vw,156px)] leading-[0.88] tracking-tight text-[color:var(--color-bone)]"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "wght" 360' }}
+            >
+              We build{' '}
+              <span className="font-display-italic text-[color:var(--color-amber)]">content</span>,
+              <br />
+              <span className="font-display-italic text-[color:var(--color-amber)]">products</span>,
+              <br />
+              &amp; the systems
+              <br />
+              that carry them.
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          Digital media and product company engineering at the intersection of
-          content, automation, and AI-native software. We don't just talk about
-          AI — we ship it.
-        </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start"
+            >
+              <div className="md:col-span-5">
+                <div className="flex items-center gap-3 mb-3 font-mono text-[10.5px] uppercase tracking-[0.24em] text-[color:var(--color-mist)]">
+                  <span className="w-6 h-px bg-[color:var(--color-amber)]" />
+                  Dispatch
+                </div>
+                <p className="text-[17px] leading-[1.55] text-[color:var(--color-bone)]/90 max-w-[42ch]">
+                  AYM Tech Media is a product-first studio engineering at the seam
+                  between storytelling and software. Media company energy, engineering
+                  company depth — and a refusal to treat AI as a feature.
+                </p>
+              </div>
+              <div className="md:col-span-5 md:col-start-7">
+                <div className="flex items-center gap-3 mb-3 font-mono text-[10.5px] uppercase tracking-[0.24em] text-[color:var(--color-mist)]">
+                  <span className="w-6 h-px bg-[color:var(--color-amber)]" />
+                  Thesis
+                </div>
+                <p className="text-[17px] leading-[1.55] text-[color:var(--color-bone)]/90 max-w-[42ch]">
+                  The next generation of media companies will also be technology
+                  companies. We don&apos;t talk about shipping — we ship. Agents,
+                  channels, apps, pipelines. Everything in the reel is live.
+                </p>
+              </div>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a
-            href="#build"
-            className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 shadow-2xl shadow-indigo-600/30 hover:shadow-indigo-500/50 flex items-center gap-2"
-          >
-            Explore Our Work
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-4 text-gray-300 font-semibold rounded-2xl border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300 backdrop-blur-sm"
-          >
-            Get In Touch
-          </a>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <a href="#build" className="btn-console">
+                Read the Reel <span aria-hidden>→</span>
+              </a>
+              <a href="#contact" className="btn-ghost">
+                Open a Channel
+              </a>
+            </motion.div>
+          </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="mt-20 flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-1.5"
+          {/* Broadcast card column */}
+          <motion.aside
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-4 lg:sticky lg:top-[120px]"
           >
-            <motion.div className="w-1.5 h-1.5 bg-white/40 rounded-full" />
-          </motion.div>
-        </motion.div>
+            <div className="relative border border-[color:var(--color-rule)] bg-[color:var(--color-ink-2)]">
+              {/* Card slate header */}
+              <div className="flex items-center justify-between px-4 py-2 border-b border-[color:var(--color-rule)] font-mono text-[10px] uppercase tracking-[0.22em]">
+                <span className="flex items-center gap-2 text-[color:var(--color-signal)]">
+                  <span className="blink-dot inline-block w-[7px] h-[7px] rounded-full bg-[color:var(--color-signal)]" />
+                  Rec
+                </span>
+                <span className="text-[color:var(--color-mist)]">Take 01 — 24 fps</span>
+              </div>
+
+              {/* CRT body */}
+              <div className="relative scanlines p-5 min-h-[340px] flex flex-col justify-between">
+                <div>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-amber)] mb-3">
+                    System · Online
+                  </div>
+                  <div className="font-display text-[42px] leading-[0.95] text-[color:var(--color-bone)]" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 80, "wght" 460' }}>
+                    “Don’t talk <br/>
+                    about AI.<br/>
+                    <span className="font-display-italic text-[color:var(--color-amber)]">Ship it.</span>”
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                  <SignalBars />
+                  <div className="rule-ticks" />
+                  <div className="grid grid-cols-2 gap-3 font-mono text-[10px] uppercase tracking-[0.22em]">
+                    <div>
+                      <div className="text-[color:var(--color-mist)]">Throughput</div>
+                      <div className="text-[color:var(--color-bone)] text-[13px] mt-1">ship / week</div>
+                    </div>
+                    <div>
+                      <div className="text-[color:var(--color-mist)]">Stack</div>
+                      <div className="text-[color:var(--color-bone)] text-[13px] mt-1">py · next · rn</div>
+                    </div>
+                    <div>
+                      <div className="text-[color:var(--color-mist)]">Mode</div>
+                      <div className="text-[color:var(--color-lime)] text-[13px] mt-1">autonomous</div>
+                    </div>
+                    <div>
+                      <div className="text-[color:var(--color-mist)]">Signal</div>
+                      <div className="text-[color:var(--color-signal)] text-[13px] mt-1">hot</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between px-4 py-2 border-t border-[color:var(--color-rule)] font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-mist)]">
+                <span>FRAME 00:00:01:12</span>
+                <span>◉ LIVE</span>
+              </div>
+            </div>
+
+            <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-mist)]">
+              Fig. 01 · Studio transmission panel
+            </div>
+          </motion.aside>
+        </div>
+      </div>
+
+      {/* Ticker bar */}
+      <div className="relative border-y border-[color:var(--color-rule)] bg-[color:var(--color-ink-2)] py-4 overflow-hidden">
+        <div className="marquee-track">
+          {[...Array(2)].map((_, rep) => (
+            <div key={rep} className="flex items-center gap-10 pr-10">
+              {tickerItems.map((item, i) => (
+                <span key={`${rep}-${i}`} className="flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--color-bone)]">
+                  <span className="flex items-center gap-3">
+                    <span className="w-[6px] h-[6px] rotate-45 bg-[color:var(--color-signal)]" />
+                    {item}
+                  </span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

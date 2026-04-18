@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden w-full">
+    <div className="grain-overlay relative min-h-screen overflow-x-hidden w-full bg-[color:var(--color-ink)]">
       <Navbar />
       <Hero />
       <About />

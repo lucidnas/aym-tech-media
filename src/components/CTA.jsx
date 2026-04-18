@@ -1,36 +1,98 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
 
 export default function CTA() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="contact" className="relative py-28 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
-      <div ref={ref} className="w-full max-w-3xl mx-auto px-6 sm:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}
-          className="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/[0.08] backdrop-blur-sm">
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-white leading-tight mb-6">
-            Let's build{' '}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">something</span>{' '}
-            together.
-          </h2>
-          <p className="text-gray-400 text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-            Whether it's a media brand, an AI product, or an autonomous system — we're ready to move.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:nas2663@gmail.com"
-              className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 shadow-2xl shadow-indigo-600/30 hover:shadow-indigo-500/50 flex items-center gap-2">
-              Start a Conversation
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="mailto:nas2663@gmail.com" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
-              nas2663@gmail.com
-            </a>
-          </div>
+    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
+      <div ref={ref} className="mx-auto max-w-[1280px] px-6 md:px-10 lg:px-14">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="section-slate mb-10"
+        >
+          <span>§05 — Transmission</span>
+          <span className="rule-ticks" />
+          <span>Open channel · reply-all</span>
         </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-7">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-display text-[clamp(48px,8vw,132px)] leading-[0.9] tracking-tight text-[color:var(--color-bone)]"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 50, "wght" 380' }}
+            >
+              Let’s build <br />
+              <span className="font-display-italic text-[color:var(--color-amber)]">something</span> <br />
+              together.
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="mt-8 max-w-[50ch] text-[17px] leading-[1.65] text-[color:var(--color-bone)]/80"
+            >
+              A media brand that needs a product. A product that needs a story.
+              A system that needs to run while you sleep. If it involves
+              shipping, we’re interested.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <a href="mailto:nas2663@gmail.com?subject=Channel%20Request%20—%20AYM" className="btn-console">
+                Transmit a message <span aria-hidden>↗</span>
+              </a>
+              <a href="mailto:nas2663@gmail.com" className="font-mono text-[12px] uppercase tracking-[0.22em] text-[color:var(--color-bone)] ink-link">
+                nas2663@gmail.com
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.9, delay: 0.3 }}
+            className="lg:col-span-5"
+          >
+            <div className="border border-[color:var(--color-rule)] bg-[color:var(--color-ink-2)]">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-[color:var(--color-rule)] font-mono text-[10px] uppercase tracking-[0.22em]">
+                <span className="text-[color:var(--color-lime)]">● Ready</span>
+                <span className="text-[color:var(--color-mist)]">Studio · Mailroom</span>
+              </div>
+              <div className="scanlines p-6 font-mono text-[12.5px] leading-[1.8] text-[color:var(--color-bone)]/85">
+                <div className="text-[color:var(--color-mist)]">&gt; from</div>
+                <div className="mb-3">you@<span className="text-[color:var(--color-amber)]">(your brand)</span>.com</div>
+                <div className="text-[color:var(--color-mist)]">&gt; to</div>
+                <div className="mb-3">nas2663@gmail.com</div>
+                <div className="text-[color:var(--color-mist)]">&gt; re</div>
+                <div className="mb-3">We want to build _______</div>
+                <div className="text-[color:var(--color-mist)]">&gt; deliverables</div>
+                <div className="mb-3">media · products · systems · any combination</div>
+                <div className="text-[color:var(--color-mist)]">&gt; priority</div>
+                <div className="text-[color:var(--color-signal)]">HIGH — ship this quarter</div>
+              </div>
+              <div className="flex items-center justify-between px-4 py-2 border-t border-[color:var(--color-rule)] font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-mist)]">
+                <span>Protocol · AYM</span>
+                <span>◉ Open</span>
+              </div>
+            </div>
+
+            <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.24em] text-[color:var(--color-mist)]">
+              Typical reply · within two business days
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
