@@ -290,8 +290,7 @@ section{padding:0 32px;position:relative}
 footer{padding:28px 32px;background:var(--ink);color:rgba(246,244,239,.6);border-top:1px solid rgba(246,244,239,.08)}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em}
 footer .brand-name{color:var(--bg)}
-footer .brand-mark{border-color:var(--bg)}
-footer .brand-mark::after{background:var(--bg)}
+/* brand-mark in footer renders identical to header: ink ring + dot on bone tile */
 
 /* responsive */
 @media (max-width: 980px){
