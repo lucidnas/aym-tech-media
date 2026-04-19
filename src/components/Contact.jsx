@@ -1,12 +1,7 @@
-import { useState } from 'react'
-
 export default function Contact() {
-  const [sent, setSent] = useState(false)
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setSent(true)
-  }
+  const email = 'info@aymtechmedia.com'
+  const subject = 'New project — AYM Tech Media'
+  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`
 
   return (
     <section id="contact">
@@ -18,77 +13,33 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="contact-grid">
+        <div className="contact-simple">
           <div>
-            <h2>Tell us what you&apos;re actually trying to ship.</h2>
+            <h2 className="contact-headline">
+              Send a brief. We&apos;ll reply within two working days — fit or not.
+            </h2>
             <p className="contact-lead">
-              We read every message. Reply within two working days — fit or not.
+              Include your goal, current stack if any, deadline, and budget range.
             </p>
-
-            <form onSubmit={onSubmit}>
-              <label>
-                Name
-                <input type="text" placeholder="Your name" />
-              </label>
-              <label>
-                Email
-                <input type="email" placeholder="you@company.com" required />
-              </label>
-              <label>
-                Discipline
-                <select defaultValue="Product — mobile or web">
-                  <option>Product — mobile or web</option>
-                  <option>Intelligence — AI, video, voice</option>
-                  <option>Media — properties, editorial</option>
-                  <option>Infrastructure — cloud, DevOps</option>
-                  <option>Brand &amp; creative systems</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-              <label>
-                Engagement
-                <select defaultValue="01 — Sprint">
-                  <option>01 — Sprint</option>
-                  <option>02 — Build</option>
-                  <option>03 — Embedded Lab</option>
-                  <option>04 — Venture / co-build</option>
-                </select>
-              </label>
-              <label className="full">
-                Project in one paragraph
-                <textarea placeholder="What you're building, for whom, what done looks like." />
-              </label>
-              <div className="contact-submit">
-                <button type="submit">
-                  {sent ? 'Sent — we’ll be in touch ✓' : 'Send inquiry ↗'}
-                </button>
-                <div className="note">Encrypted in transit · Replies in &lt; 48h</div>
-              </div>
-            </form>
+            <a href={mailto} className="btn btn-primary contact-email-btn">
+              {email} ↗
+            </a>
           </div>
 
-          <div className="channels">
-            <div className="ch">
-              <span className="l">Direct</span>
-              <a href="mailto:studio@aymtech.media">studio@aymtech.media</a>
-            </div>
-            <div className="ch">
-              <span className="l">Signal</span>
-              <a href="#">@aymtech</a>
-            </div>
-            <div className="ch">
+          <ul className="channels">
+            <li className="ch">
+              <span className="l">Email</span>
+              <a href={mailto}>{email}</a>
+            </li>
+            <li className="ch">
               <span className="l">Hours</span>
               <span>Mon–Thu · 10:00–18:00 GMT</span>
-            </div>
-            <div className="ch">
-              <span className="l">HQ</span>
-              <span>Remote, 4 tz</span>
-            </div>
-            <div className="ch">
+            </li>
+            <li className="ch">
               <span className="l">Status</span>
               <span className="status">● Accepting Q3 briefs</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

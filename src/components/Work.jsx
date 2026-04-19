@@ -6,8 +6,6 @@ const work = [
     desc: 'Opinionated editorial tooling, fast pages, AI-assisted summarization.',
     stack: ['Remix', 'Postgres', 'Elastic', 'Cloudflare'],
     yr: '2024',
-    status: 'Live',
-    live: true,
     url: 'https://dribul.com',
   },
   {
@@ -17,8 +15,6 @@ const work = [
     desc: 'Spinal cord morphometry — CSA and AP diameter from MRI, longitudinal charts.',
     stack: ['Next.js', 'FastAPI', 'Postgres', 'HL7/FHIR'],
     yr: '2025',
-    status: 'Beta',
-    live: false,
     url: 'https://myelometrix.com',
   },
 ]
@@ -60,9 +56,6 @@ export default function Work() {
                 </div>
                 <div className="yr">
                   <div>{w.yr}</div>
-                  <div className={`status${w.live ? '' : ' beta'}`}>
-                    {w.live ? '● Live' : '● Beta'}
-                  </div>
                 </div>
               </a>
             </li>
