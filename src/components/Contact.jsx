@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="contact-simple">
           <div>
             <h2 className="contact-headline">
-              Send a brief. We&apos;ll reply within two working days — fit or not.
+              Send a brief. We&apos;ll reply within two working days.
             </h2>
             <p className="contact-lead">
               Include your goal, current stack if any, deadline, and budget range.

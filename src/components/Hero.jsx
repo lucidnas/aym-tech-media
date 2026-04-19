@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="page">
         <h1>
           We build <span className="accent">apps, AI tools, media, and infrastructure</span>.
-          Shipped in weeks, not quarters.
+          Shipped in days, not weeks.
         </h1>
         <p className="hero-sub">
           AYM Tech Media is a multi-disciplinary lab. We design, engineer, and
