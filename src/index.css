@@ -211,10 +211,28 @@ section:first-of-type { border-top: 0; }
   grid-template-columns: 60px 1.6fr 2fr 160px 90px;
   gap: 20px;
   align-items: baseline;
-  padding: 22px 0;
+  padding: 22px 4px;
   border-bottom: 1px solid var(--rule-soft);
   font-size: 13px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s ease, padding 0.15s ease;
 }
+.work-row:hover {
+  background: rgba(0, 0, 0, 0.03);
+  padding-left: 10px;
+}
+.work-row:hover .name h3 { color: var(--accent); }
+.work-row:hover .name h3 .arrow { opacity: 1; transform: translate(2px, -2px); }
+.work-row .name h3 .arrow {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 14px;
+  color: var(--mute);
+  opacity: 0.35;
+  transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+.work-row:hover .name h3 .arrow { color: var(--accent); }
 .work-row .idx { color: var(--mute); }
 .work-row .name {
   display: flex;

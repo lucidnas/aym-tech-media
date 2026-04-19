@@ -8,6 +8,7 @@ const work = [
     yr: '2024',
     status: 'Live',
     live: true,
+    url: 'https://dribul.com',
   },
   {
     n: '02',
@@ -18,6 +19,7 @@ const work = [
     yr: '2025',
     status: 'Beta',
     live: false,
+    url: 'https://myelometrix.com',
   },
 ]
 
@@ -35,24 +37,34 @@ export default function Work() {
 
         <ul className="work-list">
           {work.map((w) => (
-            <li key={w.n} className="work-row">
-              <div className="idx">{w.n}</div>
-              <div className="name">
-                <h3>{w.title}</h3>
-                <div className="kind">{w.kind}</div>
-              </div>
-              <div className="desc">{w.desc}</div>
-              <div className="stack">
-                {w.stack.map((s) => (
-                  <span key={s}>{s}</span>
-                ))}
-              </div>
-              <div className="yr">
-                <div>{w.yr}</div>
-                <div className={`status${w.live ? '' : ' beta'}`}>
-                  {w.live ? '● Live' : '● Beta'}
+            <li key={w.n}>
+              <a
+                className="work-row"
+                href={w.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${w.title}`}
+              >
+                <div className="idx">{w.n}</div>
+                <div className="name">
+                  <h3>
+                    {w.title} <span className="arrow" aria-hidden>↗</span>
+                  </h3>
+                  <div className="kind">{w.kind}</div>
                 </div>
-              </div>
+                <div className="desc">{w.desc}</div>
+                <div className="stack">
+                  {w.stack.map((s) => (
+                    <span key={s}>{s}</span>
+                  ))}
+                </div>
+                <div className="yr">
+                  <div>{w.yr}</div>
+                  <div className={`status${w.live ? '' : ' beta'}`}>
+                    {w.live ? '● Live' : '● Beta'}
+                  </div>
+                </div>
+              </a>
             </li>
           ))}
         </ul>
