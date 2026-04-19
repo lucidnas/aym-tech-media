@@ -2,12 +2,11 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <div className="brand" style={{ gap: 10 }}>
-          <div className="brand-mark"></div>
-          <span className="brand-name">AYM Tech Media</span>
-        </div>
-        <div>© AYM Tech Media · A lab that ships</div>
-        <div>Built in-house</div>
+        <span className="brand">
+          <span className="brand-mark" aria-hidden /> AYM Tech Media
+        </span>
+        <span>© {new Date().getFullYear()} AYM Tech Media · A lab that ships</span>
+        <span>Built in-house</span>
       </div>
     </footer>
   )

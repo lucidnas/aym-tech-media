@@ -26,7 +26,7 @@ function App() {
   }, [])
 
   return (
-    <div className="grain">
+    <>
       <Nav />
       <Hero />
       <Work />
@@ -34,7 +34,7 @@ function App() {
       <Engagements />
       <Contact />
       <Footer />
-    </div>
+    </>
   )
 }
 
