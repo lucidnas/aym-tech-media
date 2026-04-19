@@ -2,9 +2,6 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="page">
-        <div className="hero-status">
-          <span className="hero-dot" /> Open for Q3 engagements
-        </div>
         <h1>
           We build <span className="accent">apps, AI tools, media, and infrastructure</span>.
           Shipped in weeks, not quarters.

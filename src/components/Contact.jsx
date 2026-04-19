@@ -35,10 +35,6 @@ export default function Contact() {
               <span className="l">Hours</span>
               <span>Mon–Thu · 10:00–18:00 GMT</span>
             </li>
-            <li className="ch">
-              <span className="l">Status</span>
-              <span className="status">● Accepting Q3 briefs</span>
-            </li>
           </ul>
         </div>
       </div>
