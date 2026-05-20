@@ -6,8 +6,11 @@ import Capabilities from './components/Capabilities'
 import Engagements from './components/Engagements'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import UnboxedMech from './components/UnboxedMech'
 
 function App() {
+  const isUnboxedMech = window.location.pathname === '/unboxedmech'
+
   useEffect(() => {
     const handler = (e) => {
       const a = e.target.closest('a[href^="#"]')
@@ -24,6 +27,10 @@ function App() {
     document.addEventListener('click', handler)
     return () => document.removeEventListener('click', handler)
   }, [])
+
+  if (isUnboxedMech) {
+    return <UnboxedMech />
+  }
 
   return (
     <>

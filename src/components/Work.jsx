@@ -10,6 +10,15 @@ const work = [
   },
   {
     n: '02',
+    title: 'Unboxed Mech',
+    kind: 'AI media · Vertical video · creator portfolio',
+    desc: 'Repeatable short-form transformation formats: country mechs, car-to-robot toys, and armor-animal videos.',
+    stack: ['Dreamina', 'Seedance', 'Imagen', 'TikTok'],
+    yr: '2026',
+    url: '/unboxedmech',
+  },
+  {
+    n: '03',
     title: 'MyeloMetrix',
     kind: 'Web · Health metrics · myelometrix.com',
     desc: 'Spinal cord morphometry — CSA and AP diameter from MRI, longitudinal charts.',
