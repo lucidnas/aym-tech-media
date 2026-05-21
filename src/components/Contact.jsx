@@ -1,5 +1,5 @@
 export default function Contact() {
-  const email = 'info@aymtechmedia.com'
+  const email = 'aymtechinc@gmail.com'
   const subject = 'New project — AYM Tech Media'
   const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`
 

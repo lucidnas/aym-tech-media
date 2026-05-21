@@ -1,5 +1,5 @@
 export default function Footer() {
-  const email = 'info@aymtechmedia.com'
+  const email = 'aymtechinc@gmail.com'
   return (
     <footer>
       <div className="wrap">
