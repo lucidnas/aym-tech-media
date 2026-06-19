@@ -4,7 +4,7 @@ const work = [
     title: 'Dribul',
     kind: 'Web · News platform · dribul.com',
     desc: 'Opinionated editorial tooling, fast pages, AI-assisted summarization.',
-    stack: ['Remix', 'Postgres', 'Elastic', 'Cloudflare'],
+    stack: ['Next.js', 'Postgres', 'Elastic', 'Cloudflare'],
     yr: '2024',
     url: 'https://dribul.com',
   },
@@ -20,10 +20,10 @@ const work = [
   {
     n: '03',
     title: 'MyeloMetrix',
-    kind: 'Web · Health metrics · myelometrix.com',
-    desc: 'Spinal cord morphometry — CSA and AP diameter from MRI, longitudinal charts.',
-    stack: ['Next.js', 'FastAPI', 'Postgres', 'HL7/FHIR'],
-    yr: '2025',
+    kind: 'AI health · MRI analysis · myelometrix.com',
+    desc: 'Auto-segments and measures spinal-cord MRI scans. Serverless pipeline, cross-platform desktop app.',
+    stack: ['Modal', 'FastAPI', 'Electron', 'Python'],
+    yr: '2026',
     url: 'https://myelometrix.com',
   },
 ]
