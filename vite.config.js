@@ -25,9 +25,14 @@ function sites() {
       await mkdir(metadataDir, { recursive: true })
       await writeFile(resolve(serverDir, 'index.js'), `export default {
   async fetch(request, env) {
+    const url = new URL(request.url)
+    const isPageRequest = request.method === 'GET' && !url.pathname.split('/').pop().includes('.')
+    if (isPageRequest && url.pathname !== '/') {
+      return env.ASSETS.fetch(new Request(new URL('/', request.url), request))
+    }
     const response = await env.ASSETS.fetch(request)
     if (response.status !== 404) return response
-    return env.ASSETS.fetch(new Request(new URL('/index.html', request.url), request))
+    return env.ASSETS.fetch(new Request(new URL('/', request.url), request))
   }
 }\n`)
       const hosting = await readFile(resolve(root, '.openai/hosting.json'), 'utf8')
