@@ -13,7 +13,7 @@ export default function ConceptSignal() {
       <header className="signal-nav"><a href="/concept-signal" className="signal-brand">AYM<span>Tech Media</span></a><nav aria-label="Primary navigation"><a href="#signal-systems">Systems</a><a href="#signal-work">Work</a><a href="mailto:contact@aymtechmedia.com">Contact</a></nav></header>
 
       <section className="signal-hero">
-        <img src="/designs/cinematic-infrastructure.png" alt="Steel bridge infrastructure disappearing into night fog" />
+        <img src="/designs/cinematic-infrastructure.jpg" alt="Steel bridge infrastructure disappearing into night fog" />
         <div className="signal-scrim" />
         <div className="signal-hero-copy"><p>Infrastructure. Software. Operations.</p><h1>Built to carry what matters.</h1><a href="mailto:contact@aymtechmedia.com">Discuss an initiative</a></div>
       </section>

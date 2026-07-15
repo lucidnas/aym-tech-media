@@ -21,7 +21,7 @@ export default function ConceptAtlas() {
           <h1>Engineering confidence into critical systems.</h1>
           <a href="mailto:contact@aymtechmedia.com">Discuss an initiative</a>
         </div>
-        <figure><img src="/designs/institutional-architecture.png" alt="Modern civic architecture with connected concrete and glass structures" /></figure>
+        <figure><img src="/designs/institutional-architecture.jpg" alt="Modern civic architecture with connected concrete and glass structures" /></figure>
       </section>
 
       <section className="atlas-thesis">
