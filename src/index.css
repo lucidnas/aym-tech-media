@@ -6,7 +6,10 @@
   --mute: #6B6B6B;
   --rule: #000000;
   --rule-soft: rgba(0, 0, 0, 0.12);
-  --accent: #FF4F00;
+  /* Sober clinical teal, calmer than the old hot orange. */
+  --accent: #0F766E;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,12 +17,20 @@
 html, body {
   background: var(--bg);
   color: var(--ink);
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-sans);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "zero", "ss01";
 }
+
+/* Keep the monospace as a deliberate technical accent, not the whole page. */
+.label,
+.hero-status,
+.work-row .kind,
+.work-row .stack span,
+.eng-card .head,
+.nav-brand,
+.channels .l { font-family: var(--font-mono); }
 
 html { scroll-behavior: smooth; }
 body { overflow-x: hidden; line-height: 1.5; }
@@ -85,7 +96,7 @@ section:first-of-type { border-top: 0; }
   position: relative;
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger button, hidden on desktop */
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -193,6 +204,35 @@ section:first-of-type { border-top: 0; }
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 72px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.proof-item {
+  display: flex;
+  min-height: 132px;
+  padding: 24px;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 20px;
+  border-right: 1px solid var(--rule-soft);
+}
+.proof-item:last-child { border-right: 0; }
+.proof-item dt {
+  max-width: 24ch;
+  color: var(--mute);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.proof-item dd {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
 }
 
 /* Buttons */
@@ -661,6 +701,9 @@ footer .footer-note { color: var(--mute); font-size: 12px; }
   .page { padding: 0 18px; }
   section { padding: 44px 0; }
   .hero { padding: 56px 0 48px; }
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+  .proof-item:nth-child(2) { border-right: 0; }
+  .proof-item:nth-child(-n + 2) { border-bottom: 1px solid var(--rule-soft); }
   .work-row {
     grid-template-columns: 40px 1fr;
     gap: 10px;
@@ -708,6 +751,14 @@ footer .footer-note { color: var(--mute); font-size: 12px; }
 
   /* Hero */
   .hero { padding: 40px 0 32px; }
+  .proof-grid { grid-template-columns: 1fr; margin-top: 48px; }
+  .proof-item {
+    min-height: auto;
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .proof-item:last-child { border-bottom: 0; }
 
   /* Work: show desc stacked below name */
   .work-row {

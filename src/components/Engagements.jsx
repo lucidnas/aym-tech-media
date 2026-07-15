@@ -1,27 +1,21 @@
 const engagements = [
   {
-    tag: '01 / Consult',
-    duration: '1 wk',
-    title: 'Scoping & plan',
-    desc: 'Discovery, technical plan, and a defensible cost model.',
+    tag: '01 / Assess',
+    duration: 'Focused engagement',
+    title: 'Modernization assessment',
+    desc: 'Review the current environment, identify operational risk, and produce a practical target architecture and delivery plan.',
   },
   {
-    tag: '02 / Sprint',
-    duration: '2–4 wks',
-    title: 'Prototype or v1 slice',
-    desc: 'A clickable prototype or shippable v1 slice of your product.',
+    tag: '02 / Deliver',
+    duration: 'Milestone based',
+    title: 'Modernization delivery',
+    desc: 'Build the cloud foundation, automation, API, application, or migration workstream with documented milestones and clear ownership.',
   },
   {
-    tag: '03 / Audit',
-    duration: '1–2 wks',
-    title: 'Technical & product review',
-    desc: 'Architecture, velocity, roadmap — with actionable recommendations.',
-  },
-  {
-    tag: '04 / Venture',
-    duration: 'Case-by-case',
-    title: 'Co-build with equity',
-    desc: 'We build alongside you for equity or revenue share. Selective.',
+    tag: '03 / Operate',
+    duration: 'Ongoing or transitional',
+    title: 'Operational support',
+    desc: 'Stabilization, monitoring, incident readiness, maintenance, documentation, and knowledge transfer after delivery.',
   },
 ]
 
@@ -31,10 +25,10 @@ export default function Engagements() {
       <div className="page">
         <div className="section-head">
           <div>
-            <div className="label">§ 04 — Engagements</div>
-            <h2 className="section-title" style={{ marginTop: 8 }}>Four ways we work. Max four weeks.</h2>
+            <div className="label">§ 04 / Engagements</div>
+            <h2 className="section-title" style={{ marginTop: 8 }}>A clear path from assessment to operation.</h2>
           </div>
-          <div className="label">04 / 04</div>
+          <div className="label">03 / 03</div>
         </div>
 
         <div className="eng-grid">
@@ -46,7 +40,7 @@ export default function Engagements() {
               </div>
               <h5>{e.title}</h5>
               <p>{e.desc}</p>
-              <a href="#contact" className="cta">Request a quote →</a>
+              <a href="#contact" className="cta">Discuss this engagement →</a>
             </article>
           ))}
         </div>

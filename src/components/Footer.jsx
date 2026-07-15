@@ -1,5 +1,5 @@
 export default function Footer() {
-  const email = 'aymtechinc@gmail.com'
+  const email = 'contact@aymtechmedia.com'
   return (
     <footer>
       <div className="wrap">
@@ -7,7 +7,7 @@ export default function Footer() {
           <span className="brand-mark" aria-hidden /> AYM Tech Media
         </span>
         <a className="footer-email" href={`mailto:${email}`}>{email}</a>
-        <span className="footer-note">© {new Date().getFullYear()} · Built in-house</span>
+        <span className="footer-note">© {new Date().getFullYear()} · Founder-led engineering</span>
       </div>
     </footer>
   )

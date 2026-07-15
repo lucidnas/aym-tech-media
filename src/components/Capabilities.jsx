@@ -1,18 +1,23 @@
 const lanes = [
   {
     n: '01',
-    title: 'Product',
-    desc: 'Native apps, web products, consumer tools. Swift · Next · Remix · Expo · Stripe.',
+    title: 'Cloud foundations and migration',
+    desc: 'Assessment, target architecture, account and network foundations, workload migration, and operational handoff. AWS · Azure · VMware.',
   },
   {
     n: '02',
-    title: 'Intelligence',
-    desc: 'Video, voice, language — in production, not demos. Vision · Whisper · RAG · evals.',
+    title: 'Infrastructure and delivery automation',
+    desc: 'Repeatable infrastructure, safer releases, and less manual administration. Terraform · CloudFormation · Python · CI/CD.',
   },
   {
     n: '03',
-    title: 'Infrastructure',
-    desc: 'Cloud, DevOps, release engineering. AWS · GCP · Railway · Modal · Terraform.',
+    title: 'Reliability and cloud operations',
+    desc: 'Observability, incident readiness, patching, disaster recovery, runbooks, and production support for systems that need to stay available.',
+  },
+  {
+    n: '04',
+    title: 'Application modernization',
+    desc: 'Legacy workflows become maintainable APIs, event-driven services, web applications, desktop tools, and hosted processing pipelines.',
   },
 ]
 
@@ -22,10 +27,10 @@ export default function Capabilities() {
       <div className="page">
         <div className="section-head">
           <div>
-            <div className="label">§ 03 — Capabilities</div>
-            <h2 className="section-title" style={{ marginTop: 8 }}>Three lanes, one team.</h2>
+            <div className="label">§ 02 / Capabilities</div>
+            <h2 className="section-title" style={{ marginTop: 8 }}>From cloud foundation to working software.</h2>
           </div>
-          <div className="label">03 / 03</div>
+          <div className="label">04 / 04</div>
         </div>
 
         <ul className="caps-list">

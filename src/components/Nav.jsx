@@ -12,10 +12,10 @@ export default function Nav() {
           AYM Tech Media
         </a>
         <nav className={`nav-links${open ? ' nav-links--open' : ''}`}>
-          <a href="#work" onClick={close}>Work</a>
           <a href="#capabilities" onClick={close}>Capabilities</a>
+          <a href="#work" onClick={close}>Experience</a>
           <a href="#engagements" onClick={close}>Engagements</a>
-          <a href="#contact" className="nav-cta" onClick={close}>Start a project →</a>
+          <a href="#contact" className="nav-cta" onClick={close}>Discuss an initiative →</a>
         </nav>
         <button
           className={`nav-burger${open ? ' nav-burger--open' : ''}`}

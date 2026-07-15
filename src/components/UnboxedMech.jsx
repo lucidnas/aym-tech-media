@@ -257,7 +257,7 @@ export default function UnboxedMech() {
         <div className="page">
           <div className="section-head">
             <div>
-              <div className="label">§ 01 — Creative system</div>
+              <div className="label">§ 01 / Creative system</div>
               <h2 className="section-title" style={{ marginTop: 8 }}>Designed for repeatable output.</h2>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function UnboxedMech() {
         <div className="page">
           <div className="section-head">
             <div>
-              <div className="label">§ 02 — Video portfolio</div>
+              <div className="label">§ 02 / Video portfolio</div>
               <h2 className="section-title" style={{ marginTop: 8 }}>Selected Unboxed Mech tests.</h2>
             </div>
             <div className="label">{videos.length} watermarked clips</div>
@@ -316,7 +316,7 @@ export default function UnboxedMech() {
         <div className="page">
           <div className="creator-note">
             <div>
-              <div className="label">§ 03 — Dreamina creator program</div>
+              <div className="label">§ 03 / Dreamina creator program</div>
               <h2>Why this fits</h2>
             </div>
             <p>

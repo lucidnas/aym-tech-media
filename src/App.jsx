@@ -1,15 +1,18 @@
 import { useEffect } from 'react'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Work from './components/Work'
-import Capabilities from './components/Capabilities'
-import Engagements from './components/Engagements'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
 import UnboxedMech from './components/UnboxedMech'
+import ConceptCivic from './components/ConceptCivic'
+import ConceptOps from './components/ConceptOps'
+import ConceptFusion from './components/ConceptFusion'
+import ConceptAtlas from './components/ConceptAtlas'
+import ConceptSignal from './components/ConceptSignal'
 
 function App() {
   const isUnboxedMech = window.location.pathname === '/unboxedmech'
+  const isCivicConcept = window.location.pathname === '/concept-civic'
+  const isOpsConcept = window.location.pathname === '/concept-ops'
+  const isFusionConcept = window.location.pathname === '/concept-fusion'
+  const isAtlasConcept = window.location.pathname === '/concept-atlas'
+  const isSignalConcept = window.location.pathname === '/concept-signal'
 
   useEffect(() => {
     const handler = (e) => {
@@ -32,17 +35,13 @@ function App() {
     return <UnboxedMech />
   }
 
-  return (
-    <>
-      <Nav />
-      <Hero />
-      <Work />
-      <Capabilities />
-      <Engagements />
-      <Contact />
-      <Footer />
-    </>
-  )
+  if (isCivicConcept) return <ConceptCivic />
+  if (isOpsConcept) return <ConceptOps />
+  if (isFusionConcept) return <ConceptFusion showSwitcher />
+  if (isAtlasConcept) return <ConceptAtlas />
+  if (isSignalConcept) return <ConceptSignal />
+
+  return <ConceptFusion />
 }
 
 export default App
