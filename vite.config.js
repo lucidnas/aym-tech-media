@@ -15,11 +15,12 @@ function sites() {
     async closeBundle() {
       const serverDir = resolve(root, 'dist/server')
       const metadataDir = resolve(root, 'dist/.openai')
-      await rm(resolve(root, 'dist/portfolio'), { recursive: true, force: true })
-      await cp(resolve(root, 'public/designs'), resolve(root, 'dist/designs'), { recursive: true })
-      await cp(resolve(root, 'public/favicon.svg'), resolve(root, 'dist/favicon.svg'))
-      await cp(resolve(root, 'public/icons.svg'), resolve(root, 'dist/icons.svg'))
-      await cp(resolve(root, 'public/og.png'), resolve(root, 'dist/og.png'))
+      const clientDir = resolve(root, 'dist/client')
+      await rm(resolve(clientDir, 'portfolio'), { recursive: true, force: true })
+      await cp(resolve(root, 'public/designs'), resolve(clientDir, 'designs'), { recursive: true })
+      await cp(resolve(root, 'public/favicon.svg'), resolve(clientDir, 'favicon.svg'))
+      await cp(resolve(root, 'public/icons.svg'), resolve(clientDir, 'icons.svg'))
+      await cp(resolve(root, 'public/og.png'), resolve(clientDir, 'og.png'))
       await mkdir(serverDir, { recursive: true })
       await mkdir(metadataDir, { recursive: true })
       await writeFile(resolve(serverDir, 'index.js'), `export default {
@@ -38,6 +39,9 @@ function sites() {
 export default defineConfig({
   plugins: [react(), tailwindcss(), sites()],
   publicDir: false,
+  build: {
+    outDir: 'dist/client',
+  },
   server: {
     allowedHosts: ['mac-mini.tail3f9a7b.ts.net'],
   },
