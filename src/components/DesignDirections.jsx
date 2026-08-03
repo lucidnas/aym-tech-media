@@ -31,7 +31,7 @@ function Wordmark() {
 function FinalNav({ theme, setTheme }) {
   return <nav className="dd-nav final-nav">
     <Wordmark />
-    <div className="dd-navlinks"><a href="#modernize">Modernize</a><a href="#practice">Practice</a><a href="#approach">Approach</a><a href="#insights">Insights</a></div>
+    <div className="dd-navlinks"><a href="/modernize">Modernize</a><a href="/practice">Practice</a><a href="/approach">Approach</a><a href="/work">Work</a><a href="/insights">Insights</a></div>
     <div className="dd-tools"><ThemeButton theme={theme} setTheme={setTheme} /><a className="dd-contact" href="#contact">Discuss a project</a></div>
   </nav>
 }
@@ -103,7 +103,8 @@ function WorkSection({ index }) {
 }
 
 function InsightsSection({ index }) {
-  return <section className="dd-section" id="insights"><div className="section-kicker"><span>03</span><p>{['The Review','Atlas Notes','Transition Notes','The Journal','Operating Notes','The Archive','Modernization Briefs','Infrastructure Notes','Signal','Guides and Notes'][index]}</p></div><div className="article-list">{articles.map((a,i)=><article key={a[0]}><span>Brief 0{i+1}<br/>8 min read</span><div><h2>{a[0]}</h2><p>{a[1]}</p></div><b>↗</b></article>)}</div></section>
+  const slugs = ['migration-without-the-mythology','api-operating-model','architecture-decisions-that-age-well']
+  return <section className="dd-section" id="insights"><div className="section-kicker"><span>03</span><p>{['The Review','Atlas Notes','Transition Notes','The Journal','Operating Notes','The Archive','Modernization Briefs','Infrastructure Notes','Signal','Guides and Notes'][index]}</p></div><div className="article-list">{articles.map((a,i)=><a href={`/insights/${slugs[i]}`} key={a[0]}><span>Brief 0{i+1}<br/>8 min read</span><div><h2>{a[0]}</h2><p>{a[1]}</p></div><b>↗</b></a>)}</div></section>
 }
 
 function Footer({ direction }) {
@@ -133,15 +134,64 @@ function FinalSite() {
     </header>
     <Proof/>
     <section className="final-transition" id="modernize"><div className="section-kicker"><span>01</span><p>The transition</p></div><header><p>Modernization is not a destination. It is a controlled change in how systems are built, understood, and operated.</p></header><div className="transition-ledger"><article><span>Current state</span><h2>Aging platforms</h2><p>Infrastructure that is difficult to change, expensive to operate, or poorly understood.</p><b>01</b></article><article><span>Transition</span><h2>Controlled modernization</h2><p>Clear decisions, sequenced delivery, documented risks, and accountable engineering.</p><b>02</b></article><article><span>Future state</span><h2>Dependable operations</h2><p>Resilient foundations, usable applications, clear ownership, and room to evolve.</p><b>03</b></article></div></section>
-    <section className="dd-section final-practice" id="practice"><div className="section-kicker"><span>02</span><p>The practice ledger</p></div><header><h2>From architecture decisions to working systems.</h2><p>AYM combines senior technical judgment with hands-on delivery across the connected layers of modern technology.</p></header><div className="practice-list">{practices.map((p,i)=><article key={p}><span>0{i+1}</span><h2>{p}</h2><p>{['AWS and multi-cloud foundations, infrastructure as code, security, networking, observability, and migration.','APIs and integration layers that make systems easier to connect, govern, and evolve.','Purpose-built web and desktop applications shaped around real operational work.','Architecture reviews, automation, documentation, knowledge transfer, and responsible handover.'][i]}</p><b>↗</b></article>)}</div></section>
+    <section className="dd-section final-practice" id="practice"><div className="section-kicker"><span>02</span><p>The practice ledger</p></div><header><h2>From architecture decisions to working systems.</h2><p>AYM combines senior technical judgment with hands-on delivery across the connected layers of modern technology.</p></header><div className="practice-list">{practices.map((p,i)=><a href="/practice" key={p}><span>0{i+1}</span><h2>{p}</h2><p>{['AWS and multi-cloud foundations, infrastructure as code, security, networking, observability, and migration.','APIs and integration layers that make systems easier to connect, govern, and evolve.','Purpose-built web and desktop applications shaped around real operational work.','Architecture reviews, automation, documentation, knowledge transfer, and responsible handover.'][i]}</p><b>↗</b></a>)}</div></section>
     <section className="dd-section final-approach" id="approach"><div className="section-kicker"><span>03</span><p>How engagements work</p></div><div className="approach-intro"><h2>A clear record of every important decision.</h2><p>Each engagement is structured to reduce uncertainty, make tradeoffs visible, and leave your team with systems it can confidently operate.</p></div><div className="approach-grid"><article><span>01 / Assess</span><h3>Understand the system</h3><p>Current-state architecture, dependencies, constraints, risks, and stakeholder needs.</p></article><article><span>02 / Decide</span><h3>Define the route</h3><p>Target architecture, decision records, delivery priorities, and a practical transition plan.</p></article><article><span>03 / Deliver</span><h3>Build with control</h3><p>Incremental implementation, visible progress, technical validation, and documented change.</p></article><article><span>04 / Sustain</span><h3>Transfer ownership</h3><p>Operational readiness, knowledge transfer, clear documentation, and ongoing advisory support.</p></article></div></section>
     <section className="dd-section final-output"><div className="section-kicker"><span>04</span><p>What a project produces</p></div><div className="output-grid"><h2>Useful artifacts, not presentation theater.</h2><ul><li><span>01</span>Current-state assessment</li><li><span>02</span>Target architecture</li><li><span>03</span>Decision and risk register</li><li><span>04</span>Migration roadmap</li><li><span>05</span>Infrastructure and application delivery</li><li><span>06</span>Operational documentation and handover</li></ul></div></section>
+    <section className="dd-section flagship-work"><div className="section-kicker"><span>05</span><p>Demonstrated ability</p></div><a href="/work/myelometrix"><div><span>Flagship project / Health technology</span><h2>MyeloMetrix</h2><p>A production spinal MRI morphometry platform built across cloud infrastructure, API services, medical-image processing, web, and desktop applications.</p></div><aside><strong>$100K+</strong><span>grant funding secured to date</span><b>Read the case study ↗</b></aside></a></section>
     <InsightsSection index={2}/>
     <footer id="contact"><p>Have a complex system to modernize?</p><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>Cloud modernization practice</span><span>© 2026 AYM Tech Media</span></div></footer>
   </main>
 }
 
+const pageContent = {
+  '/modernize': { kicker:'Modernize', title:'Change the system without losing control.', intro:'Modernization is a sequence of accountable decisions, not a wholesale rewrite.', sections:[['Assess what is true','Map architecture, dependencies, operating constraints, security requirements, and accumulated risk.'],['Choose what should change','Define the target state, record tradeoffs, and sequence work around operational reality.'],['Deliver in controlled increments','Build, migrate, validate, and document each change without making the whole organization wait for a big reveal.'],['Leave clear ownership','Transfer knowledge, operational playbooks, and decision history so the system remains understandable.']] },
+  '/practice': { kicker:'The practice', title:'Senior engineering across the whole system.', intro:'Cloud foundations, APIs, and applications are treated as one connected operating environment.', sections:[['Cloud foundations','AWS and multi-cloud architecture, networking, security, infrastructure as code, CI/CD, observability, and migration.'],['API platforms','Service contracts, integration layers, authentication, metering, governance, and reliable delivery.'],['Application delivery','Production web and desktop applications designed around the way people actually work.'],['Operational resilience','Architecture review, automation, incident readiness, documentation, knowledge transfer, and ongoing advisory.']] },
+  '/approach': { kicker:'The approach', title:'A clear record of every important decision.', intro:'Engagements reduce uncertainty, make tradeoffs visible, and move from assessment to durable operation.', sections:[['01 / Assess','Current-state architecture, dependencies, constraints, risks, and stakeholder needs.'],['02 / Decide','Target architecture, decision records, delivery priorities, and a practical transition plan.'],['03 / Deliver','Incremental implementation, visible progress, technical validation, and documented change.'],['04 / Sustain','Operational readiness, knowledge transfer, clear documentation, and ongoing advisory support.']] },
+}
+
+function PageShell({ children, theme, setTheme }) {
+  return <main className="dd-concept final-site inner-site" data-theme={theme} style={{'--accent':'#b84f32','--paper':'#f7f8f6','--night':'#182023'}}><FinalNav theme={theme} setTheme={setTheme}/>{children}<footer id="contact"><p>Have a complex system to modernize?</p><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>Cloud modernization practice</span><span>© 2026 AYM Tech Media</span></div></footer></main>
+}
+
+function StandardPage({ content }) {
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">AYM / {content.kicker}</p><h1>{content.title}</h1><p>{content.intro}</p></header><section className="inner-ledger">{content.sections.map((s,i)=><article key={s[0]}><span>0{i+1}</span><h2>{s[0]}</h2><p>{s[1]}</p></article>)}</section></PageShell>
+}
+
+function WorkIndex() {
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">AYM / Selected work</p><h1>Proof through working systems.</h1><p>Products and platforms that connect engineering execution to measurable organizational progress.</p></header><section className="work-index"><a href="/work/myelometrix"><span>01 / Health technology</span><h2>MyeloMetrix</h2><p>From research requirement to funded, production-ready spinal MRI analysis platform.</p><strong>$100K+ secured</strong><b>View case study ↗</b></a></section></PageShell>
+}
+
+function MyeloMetrixCase() {
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <PageShell theme={theme} setTheme={setTheme}><header className="case-hero"><div><p className="eyebrow">Case study / Health technology</p><h1>Myelo<br/>Metrix</h1><p>A quantitative intelligence platform for spinal MRI, built from product strategy through production infrastructure and cross-platform delivery.</p><a href="https://myelometrix.com" target="_blank" rel="noreferrer">Visit MyeloMetrix ↗</a></div><aside><div><strong>$100K+</strong><span>Grant funding secured to date</span></div><div><strong>Web + desktop</strong><span>Mac and Windows delivery</span></div><div><strong>Cloud pipeline</strong><span>Elastic medical-image processing</span></div><div><strong>API-ready</strong><span>Licensing and integration foundation</span></div></aside></header><section className="case-statement"><span>01 / The challenge</span><h2>Turn specialist imaging research into a product people can reliably use.</h2><p>MyeloMetrix analyzes cervical spinal MRI and produces objective vertebral-level measurements, visual overlays, comparisons, and exportable result packages. The challenge was larger than an algorithm. It required a complete product around the analysis workflow.</p></section><section className="case-capabilities"><div className="section-kicker"><span>02</span><p>What the work demonstrates</p></div><div>{[['Product architecture','A coherent system spanning customer experience, account access, analysis workflows, results, and commercial readiness.'],['Cloud infrastructure','Elastic processing for medical images with capacity controls, retries, monitoring, and cost-aware execution.'],['API engineering','A foundation for authenticated access, organization licensing, usage metering, batch processing, and external integrations.'],['Desktop applications','Mac and Windows delivery for researchers and clinical users working with NIfTI and structured data.'],['Applied AI roadmap','A product-led path from an established analysis pipeline to proprietary AI-native inference and quality control.'],['Security and governance','Strict ingestion, de-identification planning, controlled data handling, and a path toward enterprise deployment.']].map((x,i)=><article key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section><section className="case-outcome"><span>03 / The outcome</span><div><h2>Technical execution became funding leverage.</h2><p>The platform has helped secure more than $100,000 in grant funding so far, with additional grant opportunities in the pipeline. That traction demonstrates more than a polished interface. It shows the ability to translate a specialized idea into credible product architecture, working software, operational infrastructure, and a fundable roadmap.</p><blockquote>Build enough of the real system that stakeholders can evaluate the opportunity, not just the promise.</blockquote></div></section></PageShell>
+}
+
+function InsightsIndex() {
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">AYM / Transition notes</p><h1>Writing for systems that need to change carefully.</h1><p>Practical thinking on cloud migration, APIs, application delivery, and operational responsibility.</p></header><InsightsSection index={2}/></PageShell>
+}
+
+function InsightArticle({ slug }) {
+  const index = ['migration-without-the-mythology','api-operating-model','architecture-decisions-that-age-well'].indexOf(slug)
+  const item = articles[Math.max(index,0)]
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <PageShell theme={theme} setTheme={setTheme}><article className="insight-page"><header><p className="eyebrow">Transition note / 8 min read</p><h1>{item[0]}</h1><p>{item[1]}</p></header><div><p className="insight-lead">Good modernization work starts by making the current system understandable. The technology matters, but the sequence of decisions matters more.</p><h2>Start with operational truth</h2><p>Before choosing a target platform, document who owns the system, how it fails, which dependencies are hidden, and what the organization cannot afford to interrupt.</p><h2>Make tradeoffs visible</h2><p>Architecture decisions should record the alternatives, constraints, consequences, and conditions that would justify revisiting the choice.</p><h2>Deliver evidence in increments</h2><p>Every phase should leave behind something testable: a working foundation, a proven integration, an operational runbook, or a measurable reduction in uncertainty.</p></div></article></PageShell>
+}
+
 export default function DesignDirections() {
+  if (pageContent[window.location.pathname]) return <StandardPage content={pageContent[window.location.pathname]}/>
+  if (window.location.pathname === '/work') return <WorkIndex/>
+  if (window.location.pathname === '/work/myelometrix') return <MyeloMetrixCase/>
+  if (window.location.pathname === '/insights') return <InsightsIndex/>
+  const insightSlug = window.location.pathname.match(/^\/insights\/([^/]+)/)?.[1]
+  if (insightSlug) return <InsightArticle slug={insightSlug}/>
   if (window.location.pathname === '/designs') return <Gallery/>
   const slug = window.location.pathname.match(/^\/design\/([^/]+)/)?.[1]
   const index = directions.findIndex(d => d.slug === slug)
