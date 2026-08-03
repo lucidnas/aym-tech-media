@@ -28,6 +28,14 @@ function Wordmark() {
   return <a className="dd-wordmark" href="/">AYM<span>Tech Media</span></a>
 }
 
+function FinalNav({ theme, setTheme }) {
+  return <nav className="dd-nav final-nav">
+    <Wordmark />
+    <div className="dd-navlinks"><a href="#modernize">Modernize</a><a href="#practice">Practice</a><a href="#approach">Approach</a><a href="#insights">Insights</a></div>
+    <div className="dd-tools"><ThemeButton theme={theme} setTheme={setTheme} /><a className="dd-contact" href="#contact">Discuss a project</a></div>
+  </nav>
+}
+
 function Chrome({ direction, theme, setTheme }) {
   return <>
     <nav className="dd-nav">
@@ -114,8 +122,28 @@ function Gallery() {
   return <main className="dd-gallery" data-theme={theme}><nav><Wordmark/><ThemeButton theme={theme} setTheme={setTheme}/></nav><header><p>New website study / August 2026</p><h1>Ten directions for a more established AYM.</h1><div><span>Cloud modernization</span><span>Technical authority</span><span>Editorial depth</span></div></header><section>{directions.map((d,i)=><a href={`/design/${d.slug}`} key={d.slug} style={{'--swatch':d.accent}}><span>{d.no}</span><div><h2>{d.name}</h2><p>{d.idea}</p></div><i/><b>View direction ↗</b>{i<3&&<em>Recommended</em>}</a>)}</section><footer><p>Each direction includes light and dark modes, an insights system, and a complete consultancy narrative.</p></footer></main>
 }
 
+function FinalSite() {
+  const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
+  useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
+  return <main className="dd-concept final-site" data-theme={theme} style={{'--accent':'#b84f32','--paper':'#f7f8f6','--night':'#182023'}}>
+    <FinalNav theme={theme} setTheme={setTheme}/>
+    <header className="final-hero">
+      <div className="final-hero-copy"><p className="eyebrow">AYM / Cloud modernization practice</p><h1>Move forward without losing control.</h1><p className="lede">AYM turns aging platforms into dependable cloud foundations, clear interfaces, and usable applications.</p><div className="final-actions"><a href="#contact">Plan the transition</a><a href="#practice">Explore the practice</a></div></div>
+      <aside><p>Practice record / 01</p><dl><div><dt>Experience</dt><dd>10+ years</dd></div><div><dt>Principal discipline</dt><dd>Cloud infrastructure</dd></div><div><dt>Capabilities</dt><dd>Cloud, APIs, applications</dd></div><div><dt>Engagement</dt><dd>Advisory and delivery</dd></div></dl><small>Engineering that stands up to scrutiny.</small></aside>
+    </header>
+    <Proof/>
+    <section className="final-transition" id="modernize"><div className="section-kicker"><span>01</span><p>The transition</p></div><header><p>Modernization is not a destination. It is a controlled change in how systems are built, understood, and operated.</p></header><div className="transition-ledger"><article><span>Current state</span><h2>Aging platforms</h2><p>Infrastructure that is difficult to change, expensive to operate, or poorly understood.</p><b>01</b></article><article><span>Transition</span><h2>Controlled modernization</h2><p>Clear decisions, sequenced delivery, documented risks, and accountable engineering.</p><b>02</b></article><article><span>Future state</span><h2>Dependable operations</h2><p>Resilient foundations, usable applications, clear ownership, and room to evolve.</p><b>03</b></article></div></section>
+    <section className="dd-section final-practice" id="practice"><div className="section-kicker"><span>02</span><p>The practice ledger</p></div><header><h2>From architecture decisions to working systems.</h2><p>AYM combines senior technical judgment with hands-on delivery across the connected layers of modern technology.</p></header><div className="practice-list">{practices.map((p,i)=><article key={p}><span>0{i+1}</span><h2>{p}</h2><p>{['AWS and multi-cloud foundations, infrastructure as code, security, networking, observability, and migration.','APIs and integration layers that make systems easier to connect, govern, and evolve.','Purpose-built web and desktop applications shaped around real operational work.','Architecture reviews, automation, documentation, knowledge transfer, and responsible handover.'][i]}</p><b>↗</b></article>)}</div></section>
+    <section className="dd-section final-approach" id="approach"><div className="section-kicker"><span>03</span><p>How engagements work</p></div><div className="approach-intro"><h2>A clear record of every important decision.</h2><p>Each engagement is structured to reduce uncertainty, make tradeoffs visible, and leave your team with systems it can confidently operate.</p></div><div className="approach-grid"><article><span>01 / Assess</span><h3>Understand the system</h3><p>Current-state architecture, dependencies, constraints, risks, and stakeholder needs.</p></article><article><span>02 / Decide</span><h3>Define the route</h3><p>Target architecture, decision records, delivery priorities, and a practical transition plan.</p></article><article><span>03 / Deliver</span><h3>Build with control</h3><p>Incremental implementation, visible progress, technical validation, and documented change.</p></article><article><span>04 / Sustain</span><h3>Transfer ownership</h3><p>Operational readiness, knowledge transfer, clear documentation, and ongoing advisory support.</p></article></div></section>
+    <section className="dd-section final-output"><div className="section-kicker"><span>04</span><p>What a project produces</p></div><div className="output-grid"><h2>Useful artifacts, not presentation theater.</h2><ul><li><span>01</span>Current-state assessment</li><li><span>02</span>Target architecture</li><li><span>03</span>Decision and risk register</li><li><span>04</span>Migration roadmap</li><li><span>05</span>Infrastructure and application delivery</li><li><span>06</span>Operational documentation and handover</li></ul></div></section>
+    <InsightsSection index={2}/>
+    <footer id="contact"><p>Have a complex system to modernize?</p><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>Cloud modernization practice</span><span>Chicago · Available worldwide</span></div></footer>
+  </main>
+}
+
 export default function DesignDirections() {
+  if (window.location.pathname === '/designs') return <Gallery/>
   const slug = window.location.pathname.match(/^\/design\/([^/]+)/)?.[1]
   const index = directions.findIndex(d => d.slug === slug)
-  return index >= 0 ? <Concept direction={directions[index]} index={index}/> : <Gallery/>
+  return index >= 0 ? <Concept direction={directions[index]} index={index}/> : <FinalSite/>
 }
