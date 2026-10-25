@@ -111,7 +111,7 @@ export default function UmbrellaSite() {
         </a>
         <div className="hidden gap-8 text-sm text-[var(--mute)] md:flex">
           <a href="#services" className="hover:text-white">Services</a>
-          <a href="#how" className="hover:text-white">How it works</a>
+          <a href="#how" className="hover:text-white">How we work</a>
         </div>
         <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-ghost !px-4 !py-2 text-sm">Book a call</a>
       </nav>
@@ -138,7 +138,7 @@ export default function UmbrellaSite() {
       </section>
 
       <section id="how" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
-        <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">How it works</p>
+        <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">How we work</p>
         <div className="mt-6 grid gap-4 md:grid-cols-3 md:gap-5">
           {steps.map(([t, d], i) => (
             <div key={t} data-rise onPointerMove={trackSpot} className="atm-card p-7 md:p-8" style={{ '--glow': 'rgba(255,255,255,.08)', animationDelay: `${i * 0.08}s` }}>
