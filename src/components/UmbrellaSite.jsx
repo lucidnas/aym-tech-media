@@ -107,7 +107,7 @@ export default function UmbrellaSite() {
     <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#07080b]/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/" className="flex items-center gap-2.5 text-[15px] font-medium tracking-tight">
-          <span className="grid h-7 w-7 place-items-center rounded-lg bg-white text-[11px] font-semibold text-black">AYM</span>
+          <img src="/brand/logo-mark.svg" alt="" className="h-7 w-7" />
           AYM Tech Media
         </a>
         <div className="hidden gap-8 text-sm text-[var(--mute)] md:flex">
@@ -169,7 +169,7 @@ export default function UmbrellaSite() {
     <footer className="relative z-10 border-t border-white/[0.06]">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 pt-10 pb-[calc(2.5rem+env(safe-area-inset-bottom))] text-sm text-[var(--mute)] md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-2.5 text-[var(--text)]">
-          <span className="grid h-7 w-7 place-items-center rounded-lg bg-white text-[11px] font-semibold text-black">AYM</span>AYM Tech Media
+          <img src="/brand/logo-mark.svg" alt="" className="h-7 w-7" />AYM Tech Media
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
           <span>Looking for cloud and software engineering? <a href="https://aymcloudsystems.com" target="_blank" rel="noreferrer" className="text-[var(--text)] underline-offset-4 hover:underline">Visit AYM Cloud Systems</a></span>

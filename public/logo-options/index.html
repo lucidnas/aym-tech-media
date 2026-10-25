@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AYM Logo Options</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+  :root { --bg:#07080b; --card:#0e1015; --line:rgba(255,255,255,.08); --text:#f3f3f1; --mute:#8b8f98; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:Geist, system-ui, sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:56px 16px 80px; }
+  h1 { font-family:'Instrument Serif', serif; font-weight:400; font-size:clamp(2.6rem,7vw,4.5rem); line-height:1; margin:0; }
+  .lede { color:var(--mute); margin:14px 0 40px; max-width:560px; line-height:1.6; }
+  .grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+  .opt { border:1px solid var(--line); border-radius:22px; background:var(--card); overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.04); }
+  .head { display:flex; justify-content:space-between; align-items:baseline; padding:20px 22px 0; }
+  .head b { font-family:'Instrument Serif', serif; font-weight:400; font-size:2rem; }
+  .head span { color:var(--mute); font-size:12px; letter-spacing:.16em; text-transform:uppercase; }
+  .hero { display:grid; place-items:center; height:170px; }
+  .hero svg { width:96px; height:96px; }
+  .rows { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
+  .cell { padding:16px; display:flex; align-items:center; gap:10px; font-size:15px; font-weight:500; letter-spacing:-.01em; }
+  .cell svg { width:28px; height:28px; flex:none; }
+  .light { background:#fafafa; color:#0a0a0a; }
+  .fav { display:flex; gap:14px; align-items:center; padding:12px 16px; border-top:1px solid var(--line); color:var(--mute); font-size:12px; }
+  .fav svg { width:16px; height:16px; }
+  .fav .chip { display:inline-flex; gap:8px; align-items:center; background:#1b1d23; border-radius:8px 8px 0 0; padding:6px 10px; color:#cfd2d8; }
+  .why { padding:14px 22px 22px; color:var(--mute); font-size:14px; line-height:1.55; border-top:1px solid var(--line); }
+  .ink-light { --ink:#f3f3f1; } .ink-dark { --ink:#0a0a0a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AYM Tech Media <em>logo options</em></h1>
+  <p class="lede">Four directions. Each one is shown large, in the site header on dark and light, and at real favicon size in a browser tab. Pick one (or a mix) and I'll build the full set.</p>
+
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <!-- A: Three rising bars = three services, growth -->
+      <symbol id="a" viewBox="0 0 64 64">
+        <rect x="2" y="2" width="60" height="60" rx="16" fill="var(--ink)"/>
+        <rect x="14" y="34" width="9" height="16" rx="4.5" fill="#ff6a3d"/>
+        <rect x="27.5" y="24" width="9" height="26" rx="4.5" fill="#2dd4bf"/>
+        <rect x="41" y="14" width="9" height="36" rx="4.5" fill="#f5b544"/>
+      </symbol>
+      <!-- B: Geometric A with a coral dot as the crossbar -->
+      <symbol id="b" viewBox="0 0 64 64">
+        <path d="M12 54 L32 10 L52 54" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="40" r="6" fill="#ff6a3d"/>
+      </symbol>
+      <!-- C: Play button built from three coloured arcs = media -->
+      <symbol id="c" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="26" fill="none" stroke="#ff6a3d" stroke-width="6" stroke-dasharray="49 5.5" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        <circle cx="32" cy="32" r="26" fill="none" stroke="#2dd4bf" stroke-width="6" stroke-dasharray="0 54.5 49 110" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        <circle cx="32" cy="32" r="26" fill="none" stroke="#f5b544" stroke-width="6" stroke-dasharray="0 109 49 5.5" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        <path d="M27 22.5 L43 32 L27 41.5 Z" fill="var(--ink)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+      </symbol>
+      <!-- D: Three lines converging into one = everything working together (also reads as Y) -->
+      <symbol id="d" viewBox="0 0 64 64">
+        <path d="M12 10 L32 34" stroke="#ff6a3d" stroke-width="7" stroke-linecap="round"/>
+        <path d="M32 8 L32 34" stroke="#2dd4bf" stroke-width="7" stroke-linecap="round"/>
+        <path d="M52 10 L32 34" stroke="#f5b544" stroke-width="7" stroke-linecap="round"/>
+        <path d="M32 34 L32 56" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="grid">
+    <!-- template repeated per option -->
+    <section class="opt">
+      <div class="head"><b>1 · Rise</b><span>Growth</span></div>
+      <div class="hero ink-light"><svg><use href="#a"/></svg></div>
+      <div class="rows"><div class="cell ink-light"><svg><use href="#a"/></svg>AYM Tech Media</div><div class="cell light ink-dark"><svg><use href="#a"/></svg>AYM Tech Media</div></div>
+      <div class="fav ink-light"><span class="chip"><svg><use href="#a"/></svg>AYM Tech Media</span>favicon</div>
+      <p class="why">Three bars, one per service, climbing left to right. Says "more customers" at a glance and stays crisp at 16px.</p>
+    </section>
+
+    <section class="opt">
+      <div class="head"><b>2 · Apex</b><span>Monogram</span></div>
+      <div class="hero ink-light"><svg><use href="#b"/></svg></div>
+      <div class="rows"><div class="cell ink-light"><svg><use href="#b"/></svg>AYM Tech Media</div><div class="cell light ink-dark"><svg><use href="#b"/></svg>AYM Tech Media</div></div>
+      <div class="fav ink-light"><span class="chip"><svg><use href="#b"/></svg>AYM Tech Media</span>favicon</div>
+      <p class="why">A bold geometric "A" with a coral dot as its crossbar. The quietest and most luxury-feeling; lets the serif headlines do the talking.</p>
+    </section>
+
+    <section class="opt">
+      <div class="head"><b>3 · Play</b><span>Media</span></div>
+      <div class="hero ink-light"><svg><use href="#c"/></svg></div>
+      <div class="rows"><div class="cell ink-light"><svg><use href="#c"/></svg>AYM Tech Media</div><div class="cell light ink-dark"><svg><use href="#c"/></svg>AYM Tech Media</div></div>
+      <div class="fav ink-light"><span class="chip"><svg><use href="#c"/></svg>AYM Tech Media</span>favicon</div>
+      <p class="why">A play button ringed by the three service colours. Instantly says video and media; the most literal of the four.</p>
+    </section>
+
+    <section class="opt">
+      <div class="head"><b>4 · Converge</b><span>All-in-one</span></div>
+      <div class="hero ink-light"><svg><use href="#d"/></svg></div>
+      <div class="rows"><div class="cell ink-light"><svg><use href="#d"/></svg>AYM Tech Media</div><div class="cell light ink-dark"><svg><use href="#d"/></svg>AYM Tech Media</div></div>
+      <div class="fav ink-light"><span class="chip"><svg><use href="#d"/></svg>AYM Tech Media</span>favicon</div>
+      <p class="why">Website, ads and content flowing into one line, which also reads as the "Y" in AYM. Tells the one-team story.</p>
+    </section>
+  </div>
+</div>
+</body>
+</html>
