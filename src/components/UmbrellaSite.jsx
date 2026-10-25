@@ -2,7 +2,9 @@ import { useEffect } from 'react'
 import './umbrella.css'
 
 const EMAIL = 'hello@aymtechmedia.com'
-const PHONE = '(608) 470-2143'
+// Set to the Calendly URL; until then Book a call falls back to email.
+const CALENDLY = ''
+const BOOK = CALENDLY || `mailto:${EMAIL}?subject=${encodeURIComponent('Book a call')}`
 
 const mail = (subject) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`
 
@@ -112,24 +114,21 @@ export default function UmbrellaSite() {
           <a href="#services" className="hover:text-white">Services</a>
           <a href="#how" className="hover:text-white">How it works</a>
         </div>
-        <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost !px-4 !py-2 text-sm">Contact</a>
+        <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-ghost !px-4 !py-2 text-sm">Book a call</a>
       </nav>
     </header>
 
     <main id="main" className="relative z-10">
-      <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 md:pb-28 md:pt-32">
-        <p data-rise style={{ animationDelay: `${0}s` }} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-[var(--mute)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#2dd4bf] shadow-[0_0_10px_#2dd4bf]" /> Based in Milwaukee · working everywhere
-        </p>
-        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext mt-7 text-[clamp(3.1rem,9vw,7rem)] leading-[0.95]">
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 text-center md:pb-28 md:pt-32">
+        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext text-[clamp(3.1rem,9vw,7rem)] leading-[0.95]">
           More customers,<br /><em>less guesswork.</em>
         </h1>
-        <p data-rise style={{ animationDelay: `${0.16}s` }} className="mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
+        <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
           Websites, ads and content for growing businesses, made to bring in more customers.
         </p>
-        <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a href="#services" className="atm-btn atm-btn-primary">See what we do</a>
-          <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost">Get in touch</a>
+        <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Book a call</a>
+          <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
       </section>
 
@@ -160,8 +159,8 @@ export default function UmbrellaSite() {
           <h2 className="atm-serif atm-gradtext text-5xl leading-none md:text-7xl">Let's talk.</h2>
           <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">Tell us about your business and we'll send back a few free ideas to get you more customers.</p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-primary">Email us</a>
-            <a href="tel:+16084702143" className="atm-btn atm-btn-ghost">{PHONE}</a>
+            <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Book a call</a>
+            <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost">Email us</a>
           </div>
         </div>
       </section>
@@ -175,7 +174,7 @@ export default function UmbrellaSite() {
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
           <span>Looking for cloud and software engineering? <a href="https://aymcloudsystems.com" target="_blank" rel="noreferrer" className="text-[var(--text)] underline-offset-4 hover:underline">Visit AYM Cloud Systems</a></span>
         </div>
-        <div>© 2026 AYM Tech Media LLC</div>
+        <div>Based in Milwaukee · © 2026 AYM Tech Media LLC</div>
       </div>
     </footer>
   </div>
