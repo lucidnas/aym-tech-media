@@ -258,8 +258,16 @@ function InsightArticle({ slug }) {
   return <PageShell theme={theme} setTheme={setTheme}><article className="insight-page"><header><p className="eyebrow">Field note / {insightReadTime(resolvedSlug)} min read</p><h1>{item[0]}</h1><p>{item[1]}</p></header><div><p className="insight-lead">{detail.lead}</p>{detail.sections.map(([heading, paragraphs])=><section className="insight-section" key={heading}><h2>{heading}</h2>{paragraphs.map((paragraph)=><p key={paragraph}>{paragraph}</p>)}</section>)}</div></article></PageShell>
 }
 
+const CLOUD_TITLE = 'AYM Cloud Systems | Infrastructure and Systems Modernization'
+const CLOUD_DESCRIPTION = 'AYM Cloud Systems designs, modernizes, and operates cloud foundations, APIs, applications, and hybrid infrastructure for organizations with complex responsibilities.'
+
 export default function DesignDirections() {
   const path = currentRoute()
+  useEffect(() => {
+    document.title = CLOUD_TITLE
+    for (const [sel, val] of [['meta[name="description"]', CLOUD_DESCRIPTION], ['meta[property="og:title"]', CLOUD_TITLE], ['meta[property="og:description"]', CLOUD_DESCRIPTION], ['meta[name="twitter:title"]', CLOUD_TITLE], ['meta[name="twitter:description"]', CLOUD_DESCRIPTION], ['meta[name="theme-color"]', '#07080b']])
+      document.querySelector(sel)?.setAttribute('content', val)
+  }, [])
   if (pageContent[path]) return <StandardPage content={pageContent[path]}/>
   if (path === '/work') return <WorkIndex/>
   if (path === '/work/myelometrix') return <MyeloMetrixCase/>
