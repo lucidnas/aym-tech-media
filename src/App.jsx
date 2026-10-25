@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import UnboxedMech from './components/UnboxedMech'
 import DesignDirections from './components/DesignDirections'
+import UmbrellaSite from './components/UmbrellaSite'
 import './directions.css'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
   }, [])
 
   if (window.location.pathname === '/unboxedmech') return <UnboxedMech />
+  const siteOverride = new URLSearchParams(window.location.search).get('site')
+  const isMediaDomain = window.location.hostname.includes('aymtechmedia')
+  if (siteOverride === 'media' || (isMediaDomain && siteOverride !== 'cloud')) return <UmbrellaSite />
   return <DesignDirections />
 }
 

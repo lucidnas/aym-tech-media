@@ -18,6 +18,7 @@ function sites() {
       const clientDir = resolve(root, 'dist/client')
       await rm(resolve(clientDir, 'portfolio'), { recursive: true, force: true })
       await cp(resolve(root, 'public/designs'), resolve(clientDir, 'designs'), { recursive: true })
+      await cp(resolve(root, 'public/case-studies'), resolve(clientDir, 'case-studies'), { recursive: true })
       await cp(resolve(root, 'public/favicon.svg'), resolve(clientDir, 'favicon.svg'))
       await cp(resolve(root, 'public/icons.svg'), resolve(clientDir, 'icons.svg'))
       await cp(resolve(root, 'public/og.png'), resolve(clientDir, 'og.png'))

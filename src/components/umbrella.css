@@ -1,0 +1,70 @@
+/* AYM Tech Media: dark premium look. References: resend.com (ground, serif, beams), linear.app (hairlines),
+   Aceternity "Card Spotlight" (cursor glow), Magic UI "Border Beam" (travelling edge light). */
+.atm {
+  --ground: #07080b;
+  --surface: #0e1015;
+  --hair: rgba(255, 255, 255, 0.08);
+  --text: #f2f1ee;
+  --mute: #9b9ca3;
+  min-height: 100vh;
+  background: var(--ground);
+  color: var(--text);
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+.atm-serif { font-family: "Instrument Serif", ui-serif, Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+.atm-skip { position: absolute; left: -9999px; }
+.atm-skip:focus { left: 16px; top: 16px; z-index: 50; background: #fff; color: #000; padding: 8px 14px; border-radius: 999px; }
+
+/* fine film grain over everything */
+.atm::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .06; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* soft light beams behind the hero */
+.atm-beams { position: absolute; inset: -20% -10% auto; height: 900px; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(40% 50% at 20% 10%, rgba(255, 106, 61, .18), transparent 70%),
+    radial-gradient(35% 45% at 80% 0%, rgba(45, 212, 191, .14), transparent 70%),
+    radial-gradient(50% 60% at 50% 40%, rgba(120, 140, 255, .08), transparent 70%);
+  filter: blur(10px);
+}
+.atm-beam-line { position: absolute; top: -10%; width: 1px; height: 120%; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.18), transparent); transform: rotate(18deg); }
+
+/* glass card with hairline + layered shadow */
+.atm-card {
+  position: relative; border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+  border: 1px solid var(--hair);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 1px 2px rgba(0,0,0,.4), 0 24px 60px -24px rgba(0,0,0,.8);
+  overflow: hidden; isolation: isolate;
+}
+.atm-card .spot { position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .3s; pointer-events: none;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 30%), var(--glow, rgba(255,255,255,.12)), transparent 70%); }
+.atm-card:hover .spot, .atm-card.is-touch .spot { opacity: 1; }
+
+/* Magic UI-style border beam */
+.atm-beam { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; padding: 1px;
+  background: conic-gradient(from var(--a), transparent 0deg, var(--beam, #ff6a3d) 40deg, transparent 80deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: atm-spin 6s linear infinite; }
+@property --a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes atm-spin { to { --a: 360deg; } }
+
+.atm-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 14px 24px; font-weight: 500; font-size: 15px; transition: transform .2s, background .2s, box-shadow .2s; }
+.atm-btn:active { transform: scale(.98); }
+.atm-btn-primary { background: #f2f1ee; color: #07080b; box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 10px 30px -10px rgba(255,255,255,.35); }
+.atm-btn-ghost { color: var(--text); border: 1px solid var(--hair); background: rgba(255,255,255,.03); }
+.atm-btn-ghost:hover { background: rgba(255,255,255,.07); }
+
+.atm-gradtext { background: linear-gradient(180deg, #fff 20%, rgba(255,255,255,.55)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* gentle rise on load; pure CSS so content is never stuck hidden */
+.atm [data-rise] { animation: atm-rise .8s cubic-bezier(.16,1,.3,1) both; }
+@keyframes atm-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .atm-beam, .atm [data-rise] { animation: none; } }
+
+/* index.css styles bare section/footer for the Cloud Systems site; hand those back to Tailwind here. */
+.atm section, .atm footer { padding: revert-layer; border-top: revert-layer; margin: revert-layer; background: revert-layer; }
