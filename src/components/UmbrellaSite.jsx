@@ -65,7 +65,6 @@ function ServiceCard({ c, i }) {
       <span className="spot" />
       <span className="atm-beam atm-beam-hover" style={{ '--beam': c.color }} />
       <div className="flex items-center gap-3">
-        <span className="h-2.5 w-2.5 rounded-full" style={{ background: c.color, boxShadow: `0 0 16px ${c.color}` }} />
         <span className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">{c.tag}</span>
       </div>
       <h3 className="atm-serif mt-6 text-[2.4rem] leading-none md:text-5xl">{c.name}</h3>
@@ -120,7 +119,7 @@ export default function UmbrellaSite() {
 
     <main id="main" className="relative z-10">
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 text-center md:pb-28 md:pt-32">
-        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext text-[clamp(3.1rem,9vw,7rem)] leading-[0.95]">
+        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext pb-[0.14em] text-[clamp(3.1rem,9vw,7rem)] leading-[1.02]">
           More customers,<br /><em>less guesswork.</em>
         </h1>
         <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
