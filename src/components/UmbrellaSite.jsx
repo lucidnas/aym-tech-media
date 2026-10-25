@@ -3,7 +3,7 @@ import './umbrella.css'
 
 const EMAIL = 'hello@aymtechmedia.com'
 // Set to the Calendly URL; until then Book a call falls back to email.
-const CALENDLY = ''
+const CALENDLY = 'https://calendly.com/aymtechmedia/discovery-call'
 const BOOK = CALENDLY || `mailto:${EMAIL}?subject=${encodeURIComponent('Book a call')}`
 
 const mail = (subject) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`
