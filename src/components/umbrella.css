@@ -52,6 +52,9 @@
   animation: atm-spin 6s linear infinite; }
 @property --a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes atm-spin { to { --a: 360deg; } }
+/* service cards: the coloured border light only runs while hovered, focused or touched */
+.atm-beam-hover { opacity: 0; transition: opacity .4s ease; }
+.atm-card:hover .atm-beam-hover, .atm-card:focus-visible .atm-beam-hover, .atm-card.is-touch .atm-beam-hover { opacity: 1; }
 
 .atm-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 14px 24px; font-weight: 500; font-size: 15px; transition: transform .2s, background .2s, box-shadow .2s; }
 .atm-btn:active { transform: scale(.98); }

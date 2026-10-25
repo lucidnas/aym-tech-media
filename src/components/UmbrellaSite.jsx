@@ -63,7 +63,7 @@ function ServiceCard({ c, i }) {
       onPointerMove={trackSpot} onTouchStart={(e) => { trackSpot(e); e.currentTarget.classList.add('is-touch') }}
       className="atm-card group flex flex-col p-7 md:p-8" style={{ '--glow': c.glow }}>
       <span className="spot" />
-      {i === 0 && <span className="atm-beam" style={{ '--beam': c.color }} />}
+      <span className="atm-beam atm-beam-hover" style={{ '--beam': c.color }} />
       <div className="flex items-center gap-3">
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: c.color, boxShadow: `0 0 16px ${c.color}` }} />
         <span className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">{c.tag}</span>
