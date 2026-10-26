@@ -27,7 +27,7 @@ const services = [
     for: 'Get in front of people nearby',
     description: 'Scroll-stopping video ads built from what your happy customers already say, made in hours, not weeks, and shown to people nearby who need you now.',
     href: BOOK,
-    action: 'Get me more leads',
+    action: 'Get me more customers',
   },
   {
     name: 'Social media',
