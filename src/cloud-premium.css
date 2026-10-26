@@ -95,3 +95,12 @@ html:has(.final-site), body:has(.final-site) { background: #07080b; }
 @media (max-width: 820px) {
   .final-site .final-practice .practice-list article { min-height: 0; padding: 26px; }
 }
+
+/* readability: larger, brighter small text (review feedback) */
+.final-site { --muted: #a9adb6 !important; }
+.final-site .final-hero aside dt, .final-site .final-hero aside dd { font-size: 12.5px; }
+.final-site .final-hero aside dt { color: var(--accent); }
+.final-site .flagship-work aside span, .final-site .project-type, .final-site .eyebrow, .final-site figcaption { font-size: 12px; }
+.final-site .case-capabilities p, .final-site .flagship-work p, .final-site .inner-hero>p, .final-site .practice-list p { font-size: 16px; line-height: 1.65; }
+.final-site .final-hero-copy .lede { color: #c4c7cd; }
+@media (max-width: 820px) { .final-site .final-hero { padding-top: 72px; } }

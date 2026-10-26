@@ -98,7 +98,7 @@ function Wordmark() {
 function FinalNav({ theme, setTheme }) {
   return <nav className="dd-nav final-nav">
     <Wordmark />
-    <div className="dd-navlinks"><a href={homeAnchor('practice')}>Practice</a><a href={homeAnchor('work')}>Work</a><a href={routeHref('/insights')}>Insights</a></div>
+    <div className="dd-navlinks"><a href={routeHref('/practice')}>Practice</a><a href={routeHref('/approach')}>Approach</a><a href={homeAnchor('work')}>Work</a><a href={routeHref('/insights')}>Insights</a></div>
     <div className="dd-tools"><ThemeButton theme={theme} setTheme={setTheme} /><a className="dd-contact" href="#contact">Discuss a project</a></div>
   </nav>
 }
@@ -196,12 +196,12 @@ function FinalSite() {
   return <main className="dd-concept final-site" data-theme={theme} style={{'--accent':'#b84f32','--paper':'#f7f8f6','--night':'#182023'}}>
     <FinalNav theme={theme} setTheme={setTheme}/>
     <header className="final-hero">
-      <div className="final-hero-copy"><h1>Move forward without losing control.</h1><p className="lede">We modernize cloud infrastructure, APIs, and applications for organizations that cannot afford disruption.</p><div className="final-actions"><a href="#contact">Discuss a project</a></div></div>
-      <aside><dl><div><dt>Experience</dt><dd>10+ years</dd></div><div><dt>Discipline</dt><dd>Cloud infrastructure</dd></div><div><dt>Capabilities</dt><dd>Cloud, APIs, applications</dd></div><div><dt>Engagement</dt><dd>Advisory and delivery</dd></div></dl></aside>
+      <div className="final-hero-copy"><h1>Move forward without losing control.</h1><p className="lede">We modernize cloud infrastructure, APIs, and applications for health-tech, research and mid-size teams running systems they can't afford to break.</p><div className="final-actions"><a href="#contact">Discuss a project</a></div></div>
+      <aside><dl><div><dt>Flagship</dt><dd>MyeloMetrix, spinal MRI platform</dd></div><div><dt>Outcome</dt><dd>$100K+ grant funding secured</dd></div><div><dt>Delivered</dt><dd>Cloud, APIs, web and desktop</dd></div><div><dt>Experience</dt><dd>10+ years engineering</dd></div></dl></aside>
     </header>
     <section className="dd-section final-practice" id="practice"><header><h2>What we do</h2></header><div className="practice-list">{['Cloud infrastructure','APIs and integration','Application delivery','Advisory and operations'].map((p,i)=><article key={p}><h2>{p}</h2><p>{['AWS, hybrid architecture, infrastructure as code, networking, security, observability, and migration.','Services and integration layers that connect data, applications, and existing platforms.','Web and desktop software designed around real operational work.','Architecture, implementation, documentation, handover, and ongoing technical support.'][i]}</p></article>)}</div></section>
-    <section className="dd-section flagship-work" id="work"><header><h2>Selected work</h2><p>One example of how we turn complex technical requirements into a credible, fundable platform.</p></header><a href={routeHref('/work/myelometrix')}><div><p className="project-type">Health technology platform</p><h3>MyeloMetrix</h3><p>MyeloMetrix is a spinal MRI morphometry platform in active development across cloud infrastructure, API services, medical-image processing, web, and desktop applications.</p></div><aside><strong>$100K+</strong><span>grant funding secured to date</span><b>Read the case study</b></aside></a></section>
-    <footer id="contact"><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>A consulting practice of AYM Tech Media LLC · © 2026</span></div></footer>
+    <section className="dd-section flagship-work" id="work"><header><h2>Selected work</h2><p>How we turn complex technical requirements into a credible, fundable platform.</p></header><a href={routeHref('/work/myelometrix')}><div><p className="project-type">Health technology platform</p><h3>MyeloMetrix</h3><p>MyeloMetrix is a spinal MRI morphometry platform in active development across cloud infrastructure, API services, medical-image processing, web, and desktop applications.</p></div><aside><strong>$100K+</strong><span>grant funding secured to date</span><b>Read the case study</b></aside></a></section>
+    <footer id="contact"><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>© 2026 AYM Cloud Systems</span></div></footer>
   </main>
 }
 
@@ -212,19 +212,19 @@ const pageContent = {
 }
 
 function PageShell({ children, theme, setTheme }) {
-  return <main className="dd-concept final-site inner-site" data-theme={theme} style={{'--accent':'#b84f32','--paper':'#f7f8f6','--night':'#182023'}}><FinalNav theme={theme} setTheme={setTheme}/>{children}<footer id="contact"><p>Have a complex system to modernize?</p><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>ACS / Cloud modernization practice</span><span>A consulting practice of AYM Tech Media LLC · © 2026</span></div></footer></main>
+  return <main className="dd-concept final-site inner-site" data-theme={theme} style={{'--accent':'#b84f32','--paper':'#f7f8f6','--night':'#182023'}}><FinalNav theme={theme} setTheme={setTheme}/>{children}<footer id="contact"><p>Have a complex system to modernize?</p><h2>Let’s make the next move clear.</h2><a href="mailto:hello@aymtechmedia.com">hello@aymtechmedia.com</a><div><Wordmark/><span>Cloud modernization practice</span><span>© 2026 AYM Cloud Systems</span></div></footer></main>
 }
 
 function StandardPage({ content }) {
   const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
   useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
-  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">ACS / {content.kicker}</p><h1>{content.title}</h1><p>{content.intro}</p></header><section className="inner-ledger">{content.sections.map((s)=><article key={s[0]}><h2>{s[0]}</h2><p>{s[1]}</p></article>)}</section></PageShell>
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">{content.kicker}</p><h1>{content.title}</h1><p>{content.intro}</p></header><section className="inner-ledger">{content.sections.map((s)=><article key={s[0]}><h2>{s[0]}</h2><p>{s[1]}</p></article>)}</section></PageShell>
 }
 
 function WorkIndex() {
   const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
   useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
-  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">ACS / Selected work</p><h1>Proof through working systems.</h1><p>Products and platforms that connect engineering execution to measurable organizational progress.</p></header><section className="work-index"><a href={routeHref('/work/myelometrix')}><span>Health technology</span><h2>MyeloMetrix</h2><p>From research requirement to a funded spinal MRI analysis platform in active development.</p><strong>$100K+ secured</strong><b>View case study</b></a></section></PageShell>
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero"><p className="eyebrow">Selected work</p><h1>Proof through working systems.</h1><p>Products and platforms that connect engineering execution to measurable organizational progress.</p></header><section className="work-index"><a href={routeHref('/work/myelometrix')}><span>Health technology</span><h2>MyeloMetrix</h2><p>From research requirement to a funded spinal MRI analysis platform in active development.</p><strong>$100K+ secured</strong><b>View case study</b></a></section></PageShell>
 }
 
 function MyeloMetrixCase() {
@@ -245,7 +245,7 @@ function MyeloMetrixCase() {
 function InsightsIndex() {
   const [theme,setTheme] = useState(() => localStorage.getItem('aym-theme') || 'light')
   useEffect(() => { localStorage.setItem('aym-theme',theme) },[theme])
-  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero insights-hero"><p className="eyebrow">ACS / Transition notes</p><h1>Insights</h1><p>Practical thinking on cloud migration, APIs, application delivery, and operational responsibility.</p></header><InsightsSection index={2} simple/></PageShell>
+  return <PageShell theme={theme} setTheme={setTheme}><header className="inner-hero insights-hero"><p className="eyebrow">Transition notes</p><h1>Insights</h1><p>Practical thinking on cloud migration, APIs, application delivery, and operational responsibility.</p></header><InsightsSection index={2} simple/></PageShell>
 }
 
 function InsightArticle({ slug }) {

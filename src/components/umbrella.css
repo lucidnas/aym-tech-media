@@ -5,7 +5,7 @@
   --surface: #0e1015;
   --hair: rgba(255, 255, 255, 0.08);
   --text: #f2f1ee;
-  --mute: #9b9ca3;
+  --mute: #b3b4ba;
   min-height: 100vh;
   background: var(--ground);
   color: var(--text);

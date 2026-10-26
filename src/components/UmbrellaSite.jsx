@@ -16,7 +16,7 @@ const services = [
     tag: 'Fast, mobile-first sites',
     for: 'Turn visitors into customers',
     description: 'Clear pages that show your work, answer questions and make it one tap to call or book.',
-    href: mail('New website'),
+    href: BOOK,
     action: 'Start a website',
   },
   {
@@ -26,7 +26,7 @@ const services = [
     tag: 'Facebook, Instagram, TikTok',
     for: 'Get seen by the right people',
     description: 'Short ads and brand videos built from what your customers already love about you.',
-    href: mail('Ads and video'),
+    href: BOOK,
     action: 'Plan your ads',
   },
   {
@@ -36,7 +36,7 @@ const services = [
     tag: 'Social posts and explainers',
     for: 'Keep people coming back',
     description: 'A steady stream of posts, reels and visual explainers so you stay top of mind every month.',
-    href: mail('Monthly content'),
+    href: BOOK,
     action: 'Talk content',
   },
 ]
@@ -123,12 +123,15 @@ export default function UmbrellaSite() {
           More customers,<br /><em>less guesswork.</em>
         </h1>
         <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
-          Websites, ads and content for growing businesses, made to bring in more customers.
+          Websites, ads and content for cleaning companies, event decorators and other home-service businesses, built to bring you more customers.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Book a call</a>
+          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get your free review</a>
           <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
+        <p data-rise style={{ animationDelay: `${0.32}s` }} className="mx-auto mt-5 max-w-md text-sm text-[var(--mute)]">
+          A free 15-minute call. You leave with 3 ideas to get more customers, whether you hire us or not.
+        </p>
       </section>
 
       <section id="services" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
@@ -139,16 +142,15 @@ export default function UmbrellaSite() {
 
       <section id="how" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
         <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">How we work</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3 md:gap-5">
+        <ol data-rise className="atm-card mt-6 grid md:grid-cols-3" style={{ '--glow': 'rgba(255,255,255,.06)' }}>
           {steps.map(([t, d], i) => (
-            <div key={t} data-rise onPointerMove={trackSpot} className="atm-card p-7 md:p-8" style={{ '--glow': 'rgba(255,255,255,.08)', animationDelay: `${i * 0.08}s` }}>
-              <span className="spot" />
-              <span className="atm-serif text-5xl text-white/25">0{i + 1}</span>
-              <h3 className="atm-serif mt-4 text-3xl">{t}</h3>
+            <li key={t} className="relative border-white/[0.08] p-7 md:p-9 [&:not(:first-child)]:border-t md:[&:not(:first-child)]:border-l md:[&:not(:first-child)]:border-t-0">
+              <span className="font-mono text-xs tracking-[0.18em] text-white/50">STEP 0{i + 1}</span>
+              <h3 className="atm-serif mt-3 text-3xl">{t}</h3>
               <p className="mt-3 leading-relaxed text-[var(--mute)]">{d}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
@@ -156,7 +158,7 @@ export default function UmbrellaSite() {
           <span className="spot" />
           <span className="atm-beam" style={{ '--beam': '#ffffff' }} />
           <h2 className="atm-serif atm-gradtext text-5xl leading-none md:text-7xl">Let's talk.</h2>
-          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">Tell us about your business and we'll send back a few free ideas to get you more customers.</p>
+          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">15 minutes, no pitch deck. Tell us about your business and we'll send back a few free ideas to get you more customers.</p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Book a call</a>
             <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost">Email us</a>
