@@ -17,6 +17,7 @@ Read this before doing anything in this repo. `HANDOFF.md` has current status an
 - Founder: **Abdul**. Shown (first name, photo, LinkedIn https://www.linkedin.com/in/abdulnasirmohammed) on **AYM Cloud Systems only**, where buyers need the engineer. AYM Tech Media presents as the business, with no founder section on the site.
 
 ## Offer (AYM Tech Media), decided 2026-10-25
+- **What we sell (never overstate):** we make marketing video ads. The offer is a free ad made for their business; they test it; if they want help running it we can help; if it works they come back for more. NEVER say "your marketing team", "marketing department", "we handle your marketing" or imply ongoing website/social management in pitches or emails. Only mention extra services if the prospect asks.
 - **Lead magnet:** a free custom video ad for their business, delivered **within 24 hours**, theirs to keep, no obligation. (Proven: an ad in under an hour; up to ~5 ads a day.)
 - **Positioning:** lead with the offer itself (free ad in 24 hours, test it, we make more if it works). Do NOT use vague claims like "we become your marketing department" or anything implying guaranteed customers.
 - **Try first, no guarantee:** they test the free ad on their own customers. If it works, they come back for more; if not, they paid nothing. Do NOT promise results, inquiries, engagement or any "work free until" guarantee.
