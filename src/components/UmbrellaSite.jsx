@@ -14,7 +14,7 @@ const services = [
     color: '#ff6a3d',
     glow: 'rgba(255,106,61,.22)',
     tag: 'Your 24/7 salesperson',
-    for: 'Turn visitors into booked jobs',
+    for: 'Turn visitors into customers',
     description: 'Most people decide in seconds whether to call you. We build fast, mobile-first sites that show your best work and make booking one tap.',
     href: BOOK,
     action: 'Fix my website',
