@@ -14,38 +14,38 @@ const services = [
     name: 'Websites',
     color: '#ff6a3d',
     glow: 'rgba(255,106,61,.22)',
-    tag: 'Fast, mobile-first sites',
-    for: 'Turn visitors into customers',
-    description: 'Clear pages that show your work, answer questions and make it one tap to call or book.',
+    tag: 'Your 24/7 salesperson',
+    for: 'Turn visitors into booked jobs',
+    description: 'Most people decide in seconds whether to call you. We build fast, mobile-first sites that show your best work and make booking one tap.',
     href: BOOK,
-    action: 'Start a website',
+    action: 'Fix my website',
   },
   {
     name: 'Ads & video',
     color: '#2dd4bf',
     glow: 'rgba(45,212,191,.2)',
     tag: 'Facebook, Instagram, TikTok',
-    for: 'Get seen by the right people',
-    description: 'Short ads and brand videos built from what your customers already love about you.',
+    for: 'Get in front of people nearby',
+    description: 'Short video ads built from what your happy customers already say about you, shown to people in your area who need you now.',
     href: BOOK,
-    action: 'Plan your ads',
+    action: 'Get me more leads',
   },
   {
-    name: 'Content',
+    name: 'Social media',
     color: '#f5b544',
     glow: 'rgba(245,181,68,.2)',
-    tag: 'Social posts and explainers',
-    for: 'Keep people coming back',
-    description: 'A steady stream of posts, reels and visual explainers so you stay top of mind every month.',
+    tag: 'Done for you, every month',
+    for: 'Stay the name they remember',
+    description: 'Posts and reels that go out every week without you lifting a finger, so you look busy, trusted and worth calling.',
     href: BOOK,
-    action: 'Talk content',
+    action: 'Keep me posting',
   },
 ]
 
 const steps = [
-  ['We look', 'We study your site, reviews and social to find what is costing you customers.'],
-  ['We build', 'Website, ads and content made around what your best customers already say.'],
-  ['You grow', 'More calls and bookings, with fresh content every month to keep it going.'],
+  ['Free review', 'We look at your website, reviews and social media, and show you exactly where customers are slipping away.'],
+  ['We build', 'Your website, ads and posts, made around what your best customers already say about you.'],
+  ['You get booked', 'More calls and bookings, with fresh posts every month to keep them coming.'],
 ]
 
 const ext = (href) => (href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})
@@ -81,7 +81,7 @@ function ServiceCard({ c, i }) {
 export default function UmbrellaSite() {
   useEffect(() => {
     const description = 'Websites, ads, video and content that bring growing businesses more customers.'
-    document.title = 'AYM Tech Media | Websites, Ads and Content'
+    document.title = 'AYM Tech Media | Websites, Ads and Social Media'
     document.querySelector('meta[name="description"]')?.setAttribute('content', description)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', document.title)
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
@@ -120,19 +120,23 @@ export default function UmbrellaSite() {
 
     <main id="main" className="relative z-10">
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 text-center md:pb-28 md:pt-32">
+        <p data-rise className="mx-auto mb-7 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-sm text-[var(--mute)]">For local businesses tired of slow weeks</p>
         <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext pb-[0.14em] text-[clamp(3.1rem,9vw,7rem)] leading-[1.02]">
-          More customers,<br /><em>less guesswork.</em>
+          Stop waiting on referrals.<br /><em>Start getting booked.</em>
         </h1>
         <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
-          Websites, ads and content for cleaning companies, event decorators and other home-service businesses, built to bring you more customers.
+          We build your website, ads and social media so new customers find you every week, not just when word of mouth comes through.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get your free review</a>
+          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free ad + mockup</a>
           <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
         <p data-rise style={{ animationDelay: `${0.32}s` }} className="mx-auto mt-5 max-w-md text-sm text-[var(--mute)]">
-          A free 15-minute call. You leave with 3 ideas to get more customers, whether you hire us or not.
+          Book a free 15-minute call and we'll make you a custom video ad and homepage mockup for your business. Yours to keep, no obligation.
         </p>
+        <ul data-rise className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[var(--mute)]">
+          {['No long-term contracts', 'You own your website', 'Reply within 1 business day'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
+        </ul>
       </section>
 
       <section id="services" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
@@ -159,7 +163,7 @@ export default function UmbrellaSite() {
           <img src="/brand/founder.jpg" alt="Abdul, founder of AYM Tech Media" width="96" height="96" className="h-24 w-24 flex-none rounded-full border border-white/10 object-cover shadow-[0_20px_40px_-20px_rgba(0,0,0,.9)]" />
           <div>
             <p className="atm-serif text-3xl leading-tight">Hi, I'm Abdul.</p>
-            <p className="mt-3 leading-relaxed text-[var(--mute)]">I help business owners with their website and Instagram, so you can stay focused on running your business. I build your site, make your ads and keep your content going, so more people find you, trust you and call. When you work with AYM Tech Media, you work with me.</p>
+            <p className="mt-3 leading-relaxed text-[var(--mute)]">I help business owners like you get more customers from their website and social media, so you can stay focused on the work you're great at. I build your site, make your ads and keep your posts going. You won't get passed around: when you work with AYM Tech Media, you work with me.</p>
             <a href={LINKEDIN} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)] hover:underline">Connect on LinkedIn <span>↗</span></a>
           </div>
         </div>
@@ -169,10 +173,10 @@ export default function UmbrellaSite() {
         <div data-rise style={{ animationDelay: `${0}s` }} className="atm-card p-8 text-center md:p-16" style={{ '--glow': 'rgba(255,106,61,.16)' }} onPointerMove={trackSpot}>
           <span className="spot" />
           <span className="atm-beam" style={{ '--beam': '#ffffff' }} />
-          <h2 className="atm-serif atm-gradtext text-5xl leading-none md:text-7xl">Let's talk.</h2>
-          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">15 minutes, no pitch deck. Tell us about your business and we'll send back a few free ideas to get you more customers.</p>
+          <h2 className="atm-serif atm-gradtext text-5xl leading-none md:text-7xl">Let's get your phone ringing.</h2>
+          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">Book a free 15-minute review. No pitch, no pressure. You'll leave with three ideas you can use, whether you work with us or not.</p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Book a call</a>
+            <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free review</a>
             <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost">Email us</a>
           </div>
         </div>
