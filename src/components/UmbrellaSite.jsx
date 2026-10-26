@@ -26,7 +26,7 @@ const services = [
     glow: 'rgba(45,212,191,.2)',
     tag: 'Facebook, Instagram, TikTok',
     for: 'Get in front of people nearby',
-    description: 'Short video ads built from what your happy customers already say about you, shown to people in your area who need you now.',
+    description: 'Scroll-stopping video ads built from what your happy customers already say, made in hours, not weeks, and shown to people nearby who need you now.',
     href: BOOK,
     action: 'Get me more leads',
   },
@@ -125,17 +125,17 @@ export default function UmbrellaSite() {
           Stop waiting on referrals.<br /><em>Start getting booked.</em>
         </h1>
         <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
-          We build your website, ads and social media so new customers find you every week, not just when word of mouth comes through.
+          We become your marketing department: website, ads and social media, done for you, so new customers find you every week, not just when word of mouth comes through.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free ad + mockup</a>
+          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free ad</a>
           <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
         <p data-rise style={{ animationDelay: `${0.32}s` }} className="mx-auto mt-5 max-w-md text-sm text-[var(--mute)]">
-          Book a free 15-minute call and we'll make you a custom video ad and homepage mockup for your business. Yours to keep, no obligation.
+          Book a free 15-minute call and get a custom video ad made for your business within 24 hours. Yours to keep, no obligation.
         </p>
         <ul data-rise className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[var(--mute)]">
-          {['No long-term contracts', 'You own your website', 'Reply within 1 business day'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
+          {['Free ad within 24 hours', 'More inquiries in 60 days, or we work free until you do', 'No long-term contracts', 'You own your website'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
         </ul>
       </section>
 
