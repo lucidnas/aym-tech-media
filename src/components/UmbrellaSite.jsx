@@ -3,6 +3,7 @@ import './umbrella.css'
 
 const EMAIL = 'hello@aymtechmedia.com'
 // Set to the Calendly URL; until then Book a call falls back to email.
+const LINKEDIN = 'https://www.linkedin.com/in/abdulnasirmohammed'
 const CALENDLY = 'https://calendly.com/aymtechmedia/discovery-call'
 const BOOK = CALENDLY || `mailto:${EMAIL}?subject=${encodeURIComponent('Book a call')}`
 
@@ -151,6 +152,17 @@ export default function UmbrellaSite() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 pb-20 md:pb-24">
+        <div data-rise className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+          <img src="/brand/founder.jpg" alt="Abdul M., founder of AYM Tech Media" width="96" height="96" className="h-24 w-24 flex-none rounded-full border border-white/10 object-cover shadow-[0_20px_40px_-20px_rgba(0,0,0,.9)]" />
+          <div>
+            <p className="atm-serif text-3xl leading-tight">Hi, I'm Abdul M.</p>
+            <p className="mt-3 leading-relaxed text-[var(--mute)]">I'm an engineer with 10+ years building websites and software. You work directly with me, from the first call to the finished site, ads and content. No hand-offs, no long contracts.</p>
+            <a href={LINKEDIN} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)] hover:underline">Connect on LinkedIn <span>↗</span></a>
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
