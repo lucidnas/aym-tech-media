@@ -14,7 +14,7 @@ Read this before doing anything in this repo. `HANDOFF.md` has current status an
 - **AYM Tech Media** (aymtechmedia.com, abdul@aymtechmedia.com): the client-facing brand for websites, ads & video, and social media for local businesses. Not "AYM Studio" or "AYM Explains".
 - **AYM Cloud Systems** (aymcloudsystems.com): separate business (cloud, APIs, application modernization; MyeloMetrix). Never mix the two: no AYM Tech Media colours, email or "parent company" lines on Cloud Systems, and vice versa (except one footer link from AYM Tech Media).
 - Based in Milwaukee, serving businesses anywhere.
-- Founder: **Abdul** (first name only on sites). LinkedIn: https://www.linkedin.com/in/abdulnasirmohammed is the proof of experience.
+- Founder: **Abdul**. Shown (first name, photo, LinkedIn https://www.linkedin.com/in/abdulnasirmohammed) on **AYM Cloud Systems only**, where buyers need the engineer. AYM Tech Media presents as the business, with no founder section on the site.
 
 ## Offer (AYM Tech Media), decided 2026-10-25
 - **Lead magnet:** a free custom video ad for their business, delivered **within 24 hours**, theirs to keep, no obligation. (Proven: an ad in under an hour; up to ~5 ads a day.)

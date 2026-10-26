@@ -3,7 +3,6 @@ import './umbrella.css'
 
 const EMAIL = 'hello@aymtechmedia.com'
 // Set to the Calendly URL; until then Book a call falls back to email.
-const LINKEDIN = 'https://www.linkedin.com/in/abdulnasirmohammed'
 const CALENDLY = 'https://calendly.com/aymtechmedia/discovery-call'
 const BOOK = CALENDLY || `mailto:${EMAIL}?subject=${encodeURIComponent('Book a call')}`
 
@@ -36,7 +35,7 @@ const services = [
     glow: 'rgba(245,181,68,.2)',
     tag: 'Done for you, every month',
     for: 'Stay the name they remember',
-    description: 'Posts and reels that go out every week without you lifting a finger, so you look busy, trusted and worth calling.',
+    description: 'Posts and reels that go out every week without you lifting a finger, keeping your business in front of the people who need you.',
     href: BOOK,
     action: 'Keep me posting',
   },
@@ -156,17 +155,6 @@ export default function UmbrellaSite() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-6 pb-20 md:pb-24">
-        <div data-rise className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-          <img src="/brand/founder.jpg" alt="Abdul, founder of AYM Tech Media" width="96" height="96" className="h-24 w-24 flex-none rounded-full border border-white/10 object-cover shadow-[0_20px_40px_-20px_rgba(0,0,0,.9)]" />
-          <div>
-            <p className="atm-serif text-3xl leading-tight">Hi, I'm Abdul.</p>
-            <p className="mt-3 leading-relaxed text-[var(--mute)]">I help business owners like you get more customers from their website and social media, so you can stay focused on the work you're great at. I build your site, make your ads and keep your posts going. You won't get passed around: when you work with AYM Tech Media, you work with me.</p>
-            <a href={LINKEDIN} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)] hover:underline">Connect on LinkedIn <span>↗</span></a>
-          </div>
-        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
