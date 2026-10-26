@@ -86,7 +86,7 @@ export default function UmbrellaSite() {
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', document.title)
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description)
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#14110f')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#07080b')
     if (!document.getElementById('atm-fonts')) {
       const link = document.createElement('link')
       link.id = 'atm-fonts'
@@ -103,7 +103,7 @@ export default function UmbrellaSite() {
       <span className="atm-beam-line" style={{ left: '22%' }} /><span className="atm-beam-line" style={{ left: '64%', opacity: .6 }} />
     </div>
 
-    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#14110f]/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#07080b]/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/" className="flex items-center gap-2.5 text-[15px] font-medium tracking-tight">
           <img src="/brand/logo-mark.svg" alt="" className="h-7 w-7" />
@@ -138,28 +138,26 @@ export default function UmbrellaSite() {
         </ul>
       </section>
 
-      <div className="atm-paper relative z-10 py-20 md:py-28">
-      <section id="services" className="mx-auto max-w-6xl px-6 pb-16 md:pb-20">
+      <section id="services" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
         <div className="grid gap-4 md:grid-cols-3 md:gap-5">
           {services.map((c, i) => <ServiceCard key={c.name} c={c} i={i} />)}
         </div>
       </section>
 
-      <section id="how" className="mx-auto max-w-6xl px-6">
+      <section id="how" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
         <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">How we work</p>
         <ol data-rise className="atm-card mt-6 grid md:grid-cols-3" style={{ '--glow': 'rgba(255,255,255,.06)' }}>
           {steps.map(([t, d], i) => (
             <li key={t} className="relative border-white/[0.08] p-7 md:p-9 [&:not(:first-child)]:border-t md:[&:not(:first-child)]:border-l md:[&:not(:first-child)]:border-t-0">
-              <span className="font-mono text-xs tracking-[0.18em] text-[var(--mute)]">STEP 0{i + 1}</span>
+              <span className="font-mono text-xs tracking-[0.18em] text-white/50">STEP 0{i + 1}</span>
               <h3 className="atm-serif mt-3 text-3xl">{t}</h3>
               <p className="mt-3 leading-relaxed text-[var(--mute)]">{d}</p>
             </li>
           ))}
         </ol>
       </section>
-      </div>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
         <div data-rise style={{ animationDelay: `${0}s` }} className="atm-card p-8 text-center md:p-16" style={{ '--glow': 'rgba(255,106,61,.16)' }} onPointerMove={trackSpot}>
           <span className="spot" />
           <span className="atm-beam" style={{ '--beam': '#ffffff' }} />

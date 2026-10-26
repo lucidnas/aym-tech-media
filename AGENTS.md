@@ -35,7 +35,7 @@ Follow `docs/offer-and-messaging.md`. In short:
 7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), honest P.S. urgency only if real.
 
 ## Design
-- AYM Tech Media: warm hybrid. Warm brown-black #14110f hero and final CTA, warm off-white #f6f1ea middle sections (services, how we work), coral #ff7a59 main buttons, cream-to-sand serif headline gradient, Instrument Serif headlines, Geist body, cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.
+- AYM Tech Media: dark #07080b throughout (a warm/cream version was tried and rejected 2026-10-25), coral #ff7a59 main buttons, white-to-grey serif headline gradient, Instrument Serif headlines, Geist body, glass cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.
 - AYM Cloud Systems: same quality bar, own accent sky blue #6ea8ff (never coral/teal/amber).
 - Check every page at phone width before calling it done. Never hide content behind JS scroll reveals.
 
