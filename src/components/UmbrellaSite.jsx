@@ -68,7 +68,7 @@ function ServiceCard({ c, i }) {
         <span className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">{c.tag}</span>
       </div>
       <h3 className="atm-serif mt-6 text-[2.4rem] leading-none md:text-5xl">{c.name}</h3>
-      <p className="mt-2 text-sm" style={{ color: c.color }}>{c.for}</p>
+      <p className="svc-for mt-2 text-sm" style={{ color: c.color }}>{c.for}</p>
       <p className="mt-5 flex-1 leading-relaxed text-[var(--mute)]">{c.description}</p>
       <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)]">
         {c.action}<span className="transition-transform group-hover:translate-x-1">→</span>
@@ -86,7 +86,7 @@ export default function UmbrellaSite() {
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', document.title)
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description)
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#07080b')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#14110f')
     if (!document.getElementById('atm-fonts')) {
       const link = document.createElement('link')
       link.id = 'atm-fonts'
@@ -103,7 +103,7 @@ export default function UmbrellaSite() {
       <span className="atm-beam-line" style={{ left: '22%' }} /><span className="atm-beam-line" style={{ left: '64%', opacity: .6 }} />
     </div>
 
-    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#07080b]/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#14110f]/75 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/" className="flex items-center gap-2.5 text-[15px] font-medium tracking-tight">
           <img src="/brand/logo-mark.svg" alt="" className="h-7 w-7" />
@@ -124,40 +124,42 @@ export default function UmbrellaSite() {
           Stop waiting on referrals.<br /><em>Start getting booked.</em>
         </h1>
         <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
-          We become your marketing department: website, ads and social media, done for you, so new customers find you every week, not just when word of mouth comes through.
+          Get a free video ad made for your business within 24 hours. Test it on your customers. If it brings in business, we'll make you more.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get a free ad</a>
           <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
         <p data-rise style={{ animationDelay: `${0.32}s` }} className="mx-auto mt-5 max-w-md text-sm text-[var(--mute)]">
-          Book a free 15-minute call and get a custom video ad made for your business within 24 hours. Yours to keep, no obligation.
+          Yours to keep. No obligation, no pitch.
         </p>
         <ul data-rise className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[var(--mute)]">
           {['Free ad within 24 hours', 'Test it on your customers first', 'Pay only when you want more', 'No long-term contracts'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
         </ul>
       </section>
 
-      <section id="services" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
+      <div className="atm-paper relative z-10 py-20 md:py-28">
+      <section id="services" className="mx-auto max-w-6xl px-6 pb-16 md:pb-20">
         <div className="grid gap-4 md:grid-cols-3 md:gap-5">
           {services.map((c, i) => <ServiceCard key={c.name} c={c} i={i} />)}
         </div>
       </section>
 
-      <section id="how" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
+      <section id="how" className="mx-auto max-w-6xl px-6">
         <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">How we work</p>
         <ol data-rise className="atm-card mt-6 grid md:grid-cols-3" style={{ '--glow': 'rgba(255,255,255,.06)' }}>
           {steps.map(([t, d], i) => (
             <li key={t} className="relative border-white/[0.08] p-7 md:p-9 [&:not(:first-child)]:border-t md:[&:not(:first-child)]:border-l md:[&:not(:first-child)]:border-t-0">
-              <span className="font-mono text-xs tracking-[0.18em] text-white/50">STEP 0{i + 1}</span>
+              <span className="font-mono text-xs tracking-[0.18em] text-[var(--mute)]">STEP 0{i + 1}</span>
               <h3 className="atm-serif mt-3 text-3xl">{t}</h3>
               <p className="mt-3 leading-relaxed text-[var(--mute)]">{d}</p>
             </li>
           ))}
         </ol>
       </section>
+      </div>
 
-      <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div data-rise style={{ animationDelay: `${0}s` }} className="atm-card p-8 text-center md:p-16" style={{ '--glow': 'rgba(255,106,61,.16)' }} onPointerMove={trackSpot}>
           <span className="spot" />
           <span className="atm-beam" style={{ '--beam': '#ffffff' }} />

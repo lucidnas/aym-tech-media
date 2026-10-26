@@ -18,7 +18,7 @@ Read this before doing anything in this repo. `HANDOFF.md` has current status an
 
 ## Offer (AYM Tech Media), decided 2026-10-25
 - **Lead magnet:** a free custom video ad for their business, delivered **within 24 hours**, theirs to keep, no obligation. (Proven: an ad in under an hour; up to ~5 ads a day.)
-- **Positioning:** "We become your marketing department": website, ads and social media, done for you.
+- **Positioning:** lead with the offer itself (free ad in 24 hours, test it, we make more if it works). Do NOT use vague claims like "we become your marketing department" or anything implying guaranteed customers.
 - **Try first, no guarantee:** they test the free ad on their own customers. If it works, they come back for more; if not, they paid nothing. Do NOT promise results, inquiries, engagement or any "work free until" guarantee.
 - **Risk reversal:** no long-term contracts; the client owns everything we build.
 - **Next step:** 15-minute call, https://calendly.com/aymtechmedia/discovery-call
@@ -35,7 +35,7 @@ Follow `docs/offer-and-messaging.md`. In short:
 7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), honest P.S. urgency only if real.
 
 ## Design
-- AYM Tech Media: dark #07080b, Instrument Serif headlines, Geist body, glass cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.
+- AYM Tech Media: warm hybrid. Warm brown-black #14110f hero and final CTA, warm off-white #f6f1ea middle sections (services, how we work), coral #ff7a59 main buttons, cream-to-sand serif headline gradient, Instrument Serif headlines, Geist body, cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.
 - AYM Cloud Systems: same quality bar, own accent sky blue #6ea8ff (never coral/teal/amber).
 - Check every page at phone width before calling it done. Never hide content behind JS scroll reveals.
 

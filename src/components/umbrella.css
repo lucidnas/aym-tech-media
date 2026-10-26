@@ -1,11 +1,12 @@
 /* AYM Tech Media: dark premium look. References: resend.com (ground, serif, beams), linear.app (hairlines),
    Aceternity "Card Spotlight" (cursor glow), Magic UI "Border Beam" (travelling edge light). */
 .atm {
-  --ground: #07080b;
-  --surface: #0e1015;
-  --hair: rgba(255, 255, 255, 0.08);
-  --text: #f2f1ee;
-  --mute: #b3b4ba;
+  --ground: #14110f;
+  --surface: #1c1815;
+  --hair: rgba(255, 236, 214, 0.08);
+  --text: #f4ede4;
+  --mute: #d2c9bd;
+  font-size: 17px;
   min-height: 100vh;
   background: var(--ground);
   color: var(--text);
@@ -58,11 +59,12 @@
 
 .atm-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 14px 24px; font-weight: 500; font-size: 15px; transition: transform .2s, background .2s, box-shadow .2s; }
 .atm-btn:active { transform: scale(.98); }
-.atm-btn-primary { background: #f2f1ee; color: #07080b; box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 10px 30px -10px rgba(255,255,255,.35); }
+.atm-btn-primary { background: #ff7a59; color: #1a1714; box-shadow: 0 0 0 1px rgba(255,170,140,.35), 0 12px 32px -10px rgba(255,122,89,.55); }
+.atm-btn-primary:hover { background: #ff8a6c; }
 .atm-btn-ghost { color: var(--text); border: 1px solid var(--hair); background: rgba(255,255,255,.03); }
 .atm-btn-ghost:hover { background: rgba(255,255,255,.07); }
 
-.atm-gradtext { background: linear-gradient(180deg, #fff 20%, rgba(255,255,255,.55)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.atm-gradtext { background: linear-gradient(180deg, #fffaf3 20%, #e8d9c6); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 /* gentle rise on load; pure CSS so content is never stuck hidden */
 .atm [data-rise] { animation: atm-rise .8s cubic-bezier(.16,1,.3,1) both; }
@@ -71,3 +73,9 @@
 
 /* index.css styles bare section/footer for the Cloud Systems site; hand those back to Tailwind here. */
 .atm section, .atm footer { padding: revert-layer; border-top: revert-layer; margin: revert-layer; background: revert-layer; }
+
+/* warm off-white band for services + how we work (dark hero and final CTA stay dark) */
+.atm-paper { --text: #1a1714; --mute: #5c5248; --hair: rgba(26, 23, 20, 0.10); background: #f6f1ea; color: var(--text); }
+.atm-paper .atm-card { background: #fffdf9; box-shadow: 0 1px 2px rgba(26,23,20,.06), 0 22px 44px -26px rgba(26,23,20,.28); }
+.atm-paper .svc-for { filter: brightness(.72) saturate(1.2); font-weight: 500; }
+.atm-paper .atm-card .spot { mix-blend-mode: multiply; }
