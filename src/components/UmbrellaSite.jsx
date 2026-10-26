@@ -159,7 +159,7 @@ export default function UmbrellaSite() {
           <img src="/brand/founder.jpg" alt="Abdul, founder of AYM Tech Media" width="96" height="96" className="h-24 w-24 flex-none rounded-full border border-white/10 object-cover shadow-[0_20px_40px_-20px_rgba(0,0,0,.9)]" />
           <div>
             <p className="atm-serif text-3xl leading-tight">Hi, I'm Abdul.</p>
-            <p className="mt-3 leading-relaxed text-[var(--mute)]">Need help with your website or Instagram while you run your business? That's where I come in. I build your site, make your ads and keep your content going, so more people find you, trust you and call. When you work with AYM Tech Media, you work with me.</p>
+            <p className="mt-3 leading-relaxed text-[var(--mute)]">I help business owners with their website and Instagram, so you can stay focused on running your business. I build your site, make your ads and keep your content going, so more people find you, trust you and call. When you work with AYM Tech Media, you work with me.</p>
             <a href={LINKEDIN} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)] hover:underline">Connect on LinkedIn <span>↗</span></a>
           </div>
         </div>
