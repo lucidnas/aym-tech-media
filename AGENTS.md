@@ -33,7 +33,7 @@ Follow `docs/offer-and-messaging.md`. In short:
 4. **Statements, not rhetorical questions.** Professionally casual tone.
 5. **Buttons say plainly what they get:** "Get a free ad" (Abdul prefers this to first-person "Get my…").
 6. **Be specific and true:** numbers and claims must be real.
-7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), honest P.S. urgency only if real.
+7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), no pressure or "act this week" urgency; make the next step easy instead (e.g. a helpful P.S.).
 
 ## Design
 - AYM Tech Media: dark #07080b throughout (a warm/cream version was tried and rejected 2026-10-25), coral #ff7a59 main buttons, white-to-grey serif headline gradient, Instrument Serif headlines, Geist body, glass cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.
