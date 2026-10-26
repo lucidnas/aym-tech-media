@@ -127,7 +127,7 @@ export default function UmbrellaSite() {
           We become your marketing department: website, ads and social media, done for you, so new customers find you every week, not just when word of mouth comes through.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free ad</a>
+          <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get a free ad</a>
           <a href="#services" className="atm-btn atm-btn-ghost">See what we do</a>
         </div>
         <p data-rise style={{ animationDelay: `${0.32}s` }} className="mx-auto mt-5 max-w-md text-sm text-[var(--mute)]">
@@ -162,9 +162,9 @@ export default function UmbrellaSite() {
           <span className="spot" />
           <span className="atm-beam" style={{ '--beam': '#ffffff' }} />
           <h2 className="atm-serif atm-gradtext text-5xl leading-none md:text-7xl">Let's get your phone ringing.</h2>
-          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">Book a free 15-minute review. No pitch, no pressure. You'll leave with three ideas you can use, whether you work with us or not.</p>
+          <p className="mx-auto mt-5 max-w-md text-[var(--mute)]">Tell us about your business and we'll make you a free custom video ad within 24 hours. Test it on your customers. No pitch, no pressure.</p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get my free review</a>
+            <a href={BOOK} {...ext(BOOK)} className="atm-btn atm-btn-primary">Get a free ad</a>
             <a href={`mailto:${EMAIL}`} className="atm-btn atm-btn-ghost">Email us</a>
           </div>
         </div>

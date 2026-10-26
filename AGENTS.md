@@ -30,7 +30,7 @@ Follow `docs/offer-and-messaging.md`. In short:
 2. **Give value first:** lead with something made for them (ad, mockup, specific fixes), then one small ask.
 3. **Speak the customer's words, about their pain:** slow weeks, relying on referrals, no time for marketing, phone not ringing. Pull phrases from their reviews. No jargon ("leads funnel", "conversion", "quotes"), no agency-vs-agency talk.
 4. **Statements, not rhetorical questions.** Professionally casual tone.
-5. **Buttons say what they get, first person:** "Get my free ad".
+5. **Buttons say plainly what they get:** "Get a free ad" (Abdul prefers this to first-person "Get my…").
 6. **Be specific and true:** numbers and claims must be real.
 7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), honest P.S. urgency only if real.
 
