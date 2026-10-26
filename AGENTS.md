@@ -19,20 +19,20 @@ Read this before doing anything in this repo. `HANDOFF.md` has current status an
 ## Offer (AYM Tech Media), decided 2026-10-25
 - **Lead magnet:** a free custom video ad for their business, delivered **within 24 hours**, theirs to keep, no obligation. (Proven: an ad in under an hour; up to ~5 ads a day.)
 - **Positioning:** "We become your marketing department": website, ads and social media, done for you.
-- **Guarantee:** more inquiries within 60 days, or we keep working free until they get them.
+- **Try first, no guarantee:** they test the free ad on their own customers. If it works, they come back for more; if not, they paid nothing. Do NOT promise results, inquiries, engagement or any "work free until" guarantee.
 - **Risk reversal:** no long-term contracts; the client owns everything we build.
 - **Next step:** 15-minute call, https://calendly.com/aymtechmedia/discovery-call
 - Price: not public yet (discussed on the call).
 
 ## How to write (site copy, emails, ads, listings)
 Follow `docs/offer-and-messaging.md`. In short:
-1. **Hormozi Value Equation:** maximise the dream outcome (a full schedule) and perceived likelihood (free work made for them, guarantee, real person), minimise time (24 hours) and effort (done for you).
+1. **Hormozi Value Equation:** maximise the dream outcome (a full schedule) and perceived likelihood (free work made for them that they can test, real person), minimise time (24 hours) and effort (done for you).
 2. **Give value first:** lead with something made for them (ad, mockup, specific fixes), then one small ask.
 3. **Speak the customer's words, about their pain:** slow weeks, relying on referrals, no time for marketing, phone not ringing. Pull phrases from their reviews. No jargon ("leads funnel", "conversion", "quotes"), no agency-vs-agency talk.
 4. **Statements, not rhetorical questions.** Professionally casual tone.
 5. **Buttons say what they get, first person:** "Get my free ad".
 6. **Be specific and true:** numbers and claims must be real.
-7. Emails: specific subject, value in line 1, bullets, guarantee, one CTA (Calendly), honest P.S. urgency only if real.
+7. Emails: specific subject, value in line 1, bullets, "test it free" line, one CTA (Calendly), honest P.S. urgency only if real.
 
 ## Design
 - AYM Tech Media: dark #07080b, Instrument Serif headlines, Geist body, glass cards; logo = Apex "A" (coral #ff6a3d left stroke, teal #2dd4bf right stroke, amber #f5b544 dot), files in `aym-tech-media/public/brand/`.

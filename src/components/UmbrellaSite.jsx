@@ -135,7 +135,7 @@ export default function UmbrellaSite() {
           Book a free 15-minute call and get a custom video ad made for your business within 24 hours. Yours to keep, no obligation.
         </p>
         <ul data-rise className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[var(--mute)]">
-          {['Free ad within 24 hours', 'More inquiries in 60 days, or we work free until you do', 'No long-term contracts', 'You own your website'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
+          {['Free ad within 24 hours', 'Test it on your customers first', 'Pay only when you want more', 'No long-term contracts'].map(t => <li key={t} className="flex items-center gap-2"><span className="text-[#2dd4bf]">✓</span>{t}</li>)}
         </ul>
       </section>
 
