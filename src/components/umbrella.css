@@ -73,3 +73,10 @@
 /* index.css styles bare section/footer for the Cloud Systems site; hand those back to Tailwind here. */
 .atm section, .atm footer { padding: revert-layer; border-top: revert-layer; margin: revert-layer; background: revert-layer; }
 
+
+/* FAQ: + turns into x when open */
+.atm details[open] .faq-ic { transform: rotate(45deg); }
+.atm summary::-webkit-details-marker { display: none; }
+
+/* highlighted word in the hero headline: coral with an underline */
+.atm-hl { -webkit-text-fill-color: #ff7a59; color: #ff7a59; text-decoration: underline; text-decoration-color: rgba(255,122,89,.55); text-decoration-thickness: .055em; text-underline-offset: .14em; text-decoration-skip-ink: none; }

@@ -180,11 +180,10 @@ export default function UmbrellaSite() {
 
     <main id="main" className="relative z-10">
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 text-center md:pb-28 md:pt-32">
-        <p data-rise className="mx-auto mb-7 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-sm text-[var(--mute)]">For local businesses tired of slow weeks</p>
-        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext pb-[0.14em] text-[clamp(3.1rem,9vw,7rem)] leading-[1.02]">
-          Stop waiting on referrals.<br /><em>Start getting booked.</em>
+        <h1 data-rise style={{ animationDelay: `${0.08}s` }} className="atm-serif atm-gradtext pb-[0.14em] text-[clamp(2.2rem,7.4vw,5.6rem)] leading-[1.08] text-balance">
+          Stop waiting for <span className="atm-hl">customers</span> to find you.<em className="mt-3 block md:mt-2">Be the first business they call.</em>
         </h1>
-        <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-[var(--mute)]">
+        <p data-rise style={{ animationDelay: `${0.16}s` }} className="mx-auto mt-9 max-w-xl text-base leading-relaxed text-[var(--mute)] md:text-lg">
           Get a free video ad made for your business within 24 hours. Test it on your customers. If it brings in business, we'll make you more.
         </p>
         <div data-rise style={{ animationDelay: `${0.24}s` }} className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -242,10 +241,10 @@ export default function UmbrellaSite() {
       <section id="faq" className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
         <p data-rise className="text-xs uppercase tracking-[0.18em] text-[var(--mute)]">FAQ</p>
         <h2 data-rise className="atm-serif mt-3 text-4xl md:text-5xl">Good questions.</h2>
-        <div className="mt-8 divide-y divide-white/[0.08] border-y border-white/[0.08]">
+        <div className="mt-8 grid gap-3">
           {faqs.map(([q, a]) => (
-            <details key={q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">{q}<span className="text-[var(--mute)] transition-transform group-open:rotate-45">+</span></summary>
+            <details key={q} className="atm-card group px-6 py-5 md:px-7">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">{q}<span className="faq-ic flex-none text-xl text-[var(--mute)] transition-transform">+</span></summary>
               <p className="mt-3 leading-relaxed text-[var(--mute)]">{a}</p>
             </details>
           ))}
@@ -270,7 +269,7 @@ export default function UmbrellaSite() {
           <img src="/brand/logo-mark.svg" alt="" className="h-7 w-7" />AYM Tech Media
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
-          <span>Looking for cloud and software engineering? <a href="https://aymcloudsystems.com" target="_blank" rel="noreferrer" className="text-[var(--text)] underline-offset-4 hover:underline">Visit AYM Cloud Systems</a></span>
+          <span>Custom apps, internal software, APIs and cloud systems: <a href="https://aymcloudsystems.com" target="_blank" rel="noreferrer" className="text-[var(--text)] underline-offset-4 hover:underline">visit AYM Cloud Systems</a></span>
         </div>
         <div>Based in Milwaukee · © 2026 AYM Tech Media LLC</div>
       </div>
